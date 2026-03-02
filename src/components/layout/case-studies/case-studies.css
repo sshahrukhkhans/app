@@ -73,7 +73,7 @@
   position: relative;
   display: grid;
   grid-template-columns: repeat(3, minmax(230px, 1fr));
-  gap: 26px;
+  gap: 3px;
   transition: opacity 0.35s ease;
 }
  
@@ -81,7 +81,9 @@
   position: relative;
   border-radius: 24px;
   overflow: hidden;
-  min-height: 390px;
+  width: 80%;
+  min-height: 312px;
+  justify-self: center;
   background: #c7d2e6;
 }
  
@@ -269,11 +271,11 @@
   }
  
   .case-track {
-    gap: 32px;
+    gap: 4px;
   }
  
   .case-card {
-    min-height: 455px;
+    min-height: 364px;
     border-radius: 26px;
   }
  
@@ -326,11 +328,11 @@
   }
  
   .case-track {
-    gap: 36px;
+    gap: 5px;
   }
  
   .case-card {
-    min-height: 520px;
+    min-height: 416px;
     border-radius: 28px;
   }
  
@@ -405,11 +407,11 @@
  
   .case-track {
     grid-template-columns: repeat(2, minmax(230px, 1fr));
-    gap: 20px;
+    gap: 4px;
   }
  
   .case-card {
-    min-height: 360px;
+    min-height: 288px;
   }
  
   .case-header {
@@ -446,11 +448,11 @@
  
   .case-track {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 3px;
   }
  
   .case-card {
-    min-height: 320px;
+    min-height: 256px;
   }
  
   .case-card-caption h3 {
