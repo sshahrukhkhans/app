@@ -1,0 +1,174 @@
+.invest-cta-section {
+  background: #f2f4f8;
+  padding: 0 0 92px;
+}
+
+.invest-cta-wrap.container {
+  max-width: 1740px;
+  width: min(94%, 1740px);
+}
+
+.invest-cta-panel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+  min-height: 456px;
+  background:
+    radial-gradient(120% 100% at 50% 128%, rgba(22, 193, 253, 0.34) 0%, rgba(22, 193, 253, 0) 48%),
+    linear-gradient(180deg, #000d76 0%, #020b5f 100%);
+  box-shadow: inset 0 0 0 1px rgba(105, 144, 255, 0.14);
+}
+
+.invest-ring-layer {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 104%, transparent 0 12%, rgba(58, 132, 255, 0.38) 12.15% 12.35%, transparent 12.5%),
+    repeating-radial-gradient(
+      circle at 50% 104%,
+      rgba(32, 120, 251, 0.28) 0 2px,
+      transparent 2px 26px
+    );
+  opacity: 0.72;
+  z-index: 1;
+}
+
+.invest-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(18px);
+  z-index: 0;
+}
+
+.invest-glow-left {
+  width: 220px;
+  height: 220px;
+  left: 82px;
+  top: 108px;
+  background: rgba(24, 106, 255, 0.34);
+}
+
+.invest-glow-bottom {
+  width: 300px;
+  height: 300px;
+  left: 50%;
+  bottom: -156px;
+  transform: translateX(-50%);
+  background: rgba(12, 198, 255, 0.38);
+}
+
+.invest-dot {
+  position: absolute;
+  border-radius: 50%;
+  background: #1ea9ff;
+  box-shadow: 0 0 14px rgba(52, 178, 255, 0.75);
+  z-index: 2;
+}
+
+.invest-dot-one {
+  width: 15px;
+  height: 15px;
+  left: 22%;
+  top: 41%;
+}
+
+.invest-dot-two {
+  width: 11px;
+  height: 11px;
+  right: 18%;
+  top: 58%;
+}
+
+.invest-dot-three {
+  width: 9px;
+  height: 9px;
+  right: 48%;
+  top: 69%;
+}
+
+.invest-cta-content {
+  position: relative;
+  z-index: 3;
+  max-width: 860px;
+  margin: 0 auto;
+  min-height: 456px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 62px 24px;
+}
+
+.invest-cta-content h2 {
+  margin: 0;
+  max-width: 760px;
+  color: #ffffff;
+  font-size: clamp(30px, 2.8vw, 48px);
+  line-height: 1.16;
+}
+
+.invest-cta-content p {
+  margin: 18px 0 0;
+  max-width: 760px;
+  color: #a9c0e9;
+  font-size: clamp(16px, 1vw, 22px);
+  line-height: 1.6;
+}
+
+.invest-cta-btn {
+  margin-top: 26px;
+  min-width: 220px;
+  text-align: center;
+  border-radius: 14px;
+  padding: 15px 26px;
+  color: #ffffff;
+  font-size: clamp(15px, 0.9vw, 19px);
+  font-weight: 600;
+  background: linear-gradient(90deg, #2ec9f8, #2f70e4);
+  box-shadow: 0 18px 38px rgba(34, 108, 226, 0.3);
+}
+
+@media (max-width: 1200px) {
+  .invest-cta-panel,
+  .invest-cta-content {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 780px) {
+  .invest-cta-section {
+    padding: 2px 0 72px;
+  }
+
+  .invest-cta-panel,
+  .invest-cta-content {
+    min-height: 330px;
+    border-radius: 22px;
+  }
+
+  .invest-cta-content {
+    padding: 44px 18px;
+  }
+
+  .invest-cta-content h2 {
+    font-size: 30px;
+    max-width: 320px;
+  }
+
+  .invest-cta-content p {
+    font-size: 16px;
+    max-width: 340px;
+  }
+
+  .invest-cta-btn {
+    min-width: 180px;
+    font-size: 16px;
+    padding: 13px 18px;
+  }
+
+  .invest-glow-left,
+  .invest-dot-one {
+    display: none;
+  }
+}
