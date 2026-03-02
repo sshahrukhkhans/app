@@ -20,11 +20,12 @@ const Hero = () => {
           <span className="hero-tag">GROW YOUR BUSINESS WITH US</span>
           <h1>
             We Provide <span>Investment</span> <br />
-            For Great Future
+            Reliable audit support that
+            <br />
+            strengthens partner review confidence.
           </h1>
           <p>
-            We create relationship of trust with our customer by helping your
-            company grow.
+            Standards-aligned planning, workpapers, and substantive testing delivered by a secure India-based team that fits US firm workflows.
           </p>
           <div className="hero-buttons">
             <button className="primary">Learn More</button>
