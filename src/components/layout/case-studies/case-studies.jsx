@@ -1,73 +1,44 @@
 import { useEffect, useState } from "react";
 import "./case-studies.css";
+import project01 from "../../../assets/images/project-01.jpg";
+import project02 from "../../../assets/images/project-02.jpg";
+import project03 from "../../../assets/images/project-03.jpg";
+import project04 from "../../../assets/images/project-04.jpg";
+import project05 from "../../../assets/images/project-05.jpg";
+import project06 from "../../../assets/images/project-06.jpg";
  
 const cases = [
   {
     title: "Market Expansion",
     category: "Management",
-    image:
-      "https://demo.bravisthemes.com/jackcerra/wp-content/uploads/2023/03/project-03-740x740.jpg",
-    fallback1:
-      "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=80",
-    fallback2: "https://picsum.photos/seed/project-03/1400/1400",
+    image: project01,
   },
   {
     title: "Consumer Products",
     category: "Investment",
-    image:
-      "https://demo.bravisthemes.com/jackcerra/wp-content/uploads/2023/03/project-04-740x740.jpg",
-    fallback1:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80",
-    fallback2: "https://picsum.photos/seed/project-04/1400/1400",
+    image: project02,
   },
   {
     title: "Artboard Studio",
     category: "Business",
-    image:
-      "https://demo.bravisthemes.com/jackcerra/wp-content/uploads/2023/03/project-05-740x740.jpg",
-    fallback1:
-      "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1400&q=80",
-    fallback2: "https://picsum.photos/seed/project-05/1400/1400",
+    image: project03,
   },
   {
     title: "Business Branding",
     category: "Consultancy",
-    image:
-      "https://demo.bravisthemes.com/jackcerra/wp-content/uploads/2023/03/project-06-740x740.jpg",
-    fallback1:
-      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=80",
-    fallback2: "https://picsum.photos/seed/project-06/1400/1400",
+    image: project04,
   },
   {
     title: "Startup Business",
     category: "Consultancy",
-    image:
-      "https://demo.bravisthemes.com/jackcerra/wp-content/uploads/2023/03/project-07-740x740.jpg",
-    fallback1:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80",
-    fallback2: "https://picsum.photos/seed/project-07/1400/1400",
+    image: project05,
   },
   {
     title: "Business Growth",
     category: "Business",
-    image:
-      "https://demo.bravisthemes.com/jackcerra/wp-content/uploads/2023/03/project-08-740x740.jpg",
-    fallback1:
-      "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=80",
-    fallback2: "https://picsum.photos/seed/project-08/1400/1400",
+    image: project06,
   },
 ];
- 
-const FINAL_FALLBACK =
-  "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='1200'><rect width='100%25' height='100%25' fill='%23cdd8ea'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='56' fill='%23587095'>Image unavailable</text></svg>";
- 
-const applyNextFallback = (event, fallbacks) => {
-  const img = event.currentTarget;
-  const nextIndex = Number(img.dataset.fallbackIndex || "0");
-  const nextSrc = fallbacks[nextIndex] || FINAL_FALLBACK;
-  img.dataset.fallbackIndex = String(nextIndex + 1);
-  if (img.src !== nextSrc) img.src = nextSrc;
-};
  
 const CaseStudiesSection = () => {
   const [start, setStart] = useState(0);
@@ -123,10 +94,6 @@ const CaseStudiesSection = () => {
                   src={item.image}
                   alt={item.title}
                   loading="lazy"
-                  referrerPolicy="no-referrer"
-                  onError={(e) =>
-                    applyNextFallback(e, [item.fallback1, item.fallback2])
-                  }
                 />
                 <div className="case-card-caption">
                   <h3>{item.title}</h3>
