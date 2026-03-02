@@ -3,8 +3,9 @@ import "./services.css";
  
 const services = [
   {
-    title: "Business Growth",
-    desc: "We help business bring ideas to life in the digital world by the use of technology tools...",
+    title: "Planning to execution continuity",
+    desc:
+      "Early-stage planning support that strengthens scope, risk, and control understanding before fieldwork begins.",
     icon: (
       <svg viewBox="0 0 64 64" aria-hidden="true">
         <defs>
@@ -22,8 +23,9 @@ const services = [
     ),
   },
   {
-    title: "Business Innovation",
-    desc: "We help business bring ideas to life in the digital world by the use of technology tools...",
+    title: "Firm-ready documentation structure",
+    desc:
+      "Structured workpaper preparation aligned to firm conventions, indexing discipline, and reviewer expectations.",
     icon: (
       <svg viewBox="0 0 64 64" aria-hidden="true">
         <defs>
@@ -39,8 +41,9 @@ const services = [
     ),
   },
   {
-    title: "Market Research",
-    desc: "We help business bring ideas to life in the digital world by the use of technology tools...",
+    title: "Testing support built for review",
+    desc:
+      "Focused testing support across balances, transactions, analytics, and external confirmation workflows.",
     icon: (
       <svg viewBox="0 0 64 64" aria-hidden="true">
         <defs>
@@ -53,24 +56,6 @@ const services = [
         <path d="M32 14A18 18 0 0 1 50 32H32V14Z" fill="url(#grad-chart)" />
         <circle cx="32" cy="32" r="10" fill="#9fb2d8" />
         <circle cx="32" cy="32" r="8" fill="#eef4ff" />
-      </svg>
-    ),
-  },
-  {
-    title: "New Project Idea",
-    desc: "We help business bring ideas to life in the digital world by the use of technology tools...",
-    icon: (
-      <svg viewBox="0 0 64 64" aria-hidden="true">
-        <defs>
-          <linearGradient id="grad-search" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#38ccff" />
-            <stop offset="100%" stopColor="#285ed2" />
-          </linearGradient>
-        </defs>
-        <rect x="12" y="14" width="26" height="36" rx="4" fill="#f0f5ff" />
-        <path d="M18 22H32M18 30H32M18 38H28" stroke="#91a5cb" strokeWidth="3" strokeLinecap="round" />
-        <circle cx="42" cy="28" r="8" fill="none" stroke="url(#grad-search)" strokeWidth="4" />
-        <path d="M47.5 33.5L54 40" stroke="url(#grad-search)" strokeWidth="4" strokeLinecap="round" />
       </svg>
     ),
   },
@@ -107,15 +92,16 @@ const ServicesSection = () => {
         <div className="services-intro">
           <div className="services-kicker-wrap">
             <span className="services-kicker-line" />
-            <span className="services-kicker">SERVICES</span>
+            <span className="services-kicker">COMPREHENSIVE AUDIT SUPPORT</span>
           </div>
- 
-          <h2>We help to use your Full Potential</h2>
+
+          <h2>Core Services</h2>
           <p>
-            As a business firm our main goal is to provide best services to our
-            customers &amp; create best ideas to help grow our clients.
+            Our team supports US CPA firms with structured planning, disciplined
+            documentation, and audit-ready execution that integrates smoothly
+            into established engagement workflows.
           </p>
-          <button className="services-btn">See All Services</button>
+          <button className="services-btn">Discuss your workflow</button>
         </div>
  
         <div className="services-grid">
@@ -127,8 +113,7 @@ const ServicesSection = () => {
             >
               <div className="service-icon">{item.icon}</div>
               <h3>{item.title}</h3>
-              <p>{item.desc}</p>
-              <a className="service-link" href="/">READ MORE</a>
+              {item.desc ? <p>{item.desc}</p> : null}
             </article>
           ))}
         </div>
