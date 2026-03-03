@@ -9,60 +9,62 @@ import project06 from "../../../assets/images/project-06.jpg";
  
 const cases = [
   {
-    title: "Market Expansion",
-    category: "Management",
+    title: "Manufacturing & Trading",
+    category: "Inventory valuation and revenue recognition",
     image: project01,
   },
   {
-    title: "Consumer Products",
-    category: "Investment",
+    title: "Healthcare",
+    category: "Billing integrity and operational ratio analysis",
     image: project02,
   },
   {
-    title: "Artboard Studio",
-    category: "Business",
+    title: "Real Estate & Property",
+    category: "Compliance checks and lease analytics",
     image: project03,
   },
   {
-    title: "Business Branding",
-    category: "Consultancy",
+    title: "Not-For-Profit",
+    category: "Restricted grants and transparency reporting",
     image: project04,
   },
   {
-    title: "Startup Business",
-    category: "Consultancy",
+    title: "IT & SaaS",
+    category: "ASC 606 compliance and deferred revenue",
     image: project05,
   },
   {
-    title: "Business Growth",
-    category: "Business",
+    title: "Retail & E-commerce",
+    category: "Transaction testing and gross margin controls",
     image: project06,
+  },
+  {
+    title: "Hospitality & Leisure",
+    category: "Seasonality and occupancy metric analytics",
+    image: project01,
   },
 ];
  
 const CaseStudiesSection = () => {
   const [start, setStart] = useState(0);
   const [visibleCount, setVisibleCount] = useState(3);
- 
+  const maxStart = Math.max(0, cases.length - visibleCount);
+
   useEffect(() => {
     const updateVisible = () => {
-      if (window.innerWidth <= 780) setVisibleCount(1);
-      else if (window.innerWidth <= 1200) setVisibleCount(2);
-      else setVisibleCount(3);
+      const nextVisible =
+        window.innerWidth <= 780 ? 1 : window.innerWidth <= 1200 ? 2 : 3;
+      setVisibleCount(nextVisible);
+      setStart((prev) => Math.min(prev, Math.max(0, cases.length - nextVisible)));
     };
  
     updateVisible();
     window.addEventListener("resize", updateVisible);
     return () => window.removeEventListener("resize", updateVisible);
   }, []);
- 
-  const visibleCases = Array.from({ length: visibleCount }, (_, i) => {
-    return cases[(start + i) % cases.length];
-  });
- 
-  const handlePrev = () =>
-    setStart((prev) => (prev - 1 + cases.length) % cases.length);
-  const handleNext = () => setStart((prev) => (prev + 1) % cases.length);
+
+  const handlePrev = () => setStart((prev) => Math.max(prev - 1, 0));
+  const handleNext = () => setStart((prev) => Math.min(prev + 1, maxStart));
  
   return (
     <section className="case-studies-section">
@@ -74,22 +76,25 @@ const CaseStudiesSection = () => {
         <header className="case-header">
           <div className="case-kicker-wrap">
             <span className="case-kicker-line" />
-            <span className="case-kicker">CASE STUDIES</span>
+            <span className="case-kicker">INDUSTRY EXPERTISE</span>
           </div>
  
-          <h2>
-            Explore Our Top <span>Cases</span>
-          </h2>
+          <h2>Domain-Specific Audit Knowledge</h2>
           <p>
-            As a business firm our main goal is to provide best services to our
-            customers &amp; create best ideas to help grow our clients.
+            Our delivery model adapts to industry-specific risk areas, transaction patterns, and reporting issues so support remains relevant across sectors with different audit priorities.
           </p>
         </header>
  
         <div className="case-viewport">
-          <div className="case-track">
-            {visibleCases.map((item, index) => (
-              <article className="case-card" key={`${item.title}-${index}`}>
+          <div
+            className="case-track"
+            style={{
+              "--visible-count": visibleCount,
+              transform: `translateX(-${(start * 100) / visibleCount}%)`,
+            }}
+          >
+            {cases.map((item) => (
+              <article className="case-card" key={item.title}>
                 <img
                   src={item.image}
                   alt={item.title}
@@ -113,6 +118,7 @@ const CaseStudiesSection = () => {
             className="case-arrow"
             onClick={handlePrev}
             aria-label="Previous cases"
+            disabled={start === 0}
           >
             ‹
           </button>
@@ -121,6 +127,7 @@ const CaseStudiesSection = () => {
             className="case-arrow"
             onClick={handleNext}
             aria-label="Next cases"
+            disabled={start >= maxStart}
           >
             ›
           </button>

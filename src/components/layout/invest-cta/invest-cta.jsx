@@ -14,10 +14,12 @@ const InvestCtaSection = () => {
           <div className="invest-ring-layer" aria-hidden="true" />
 
           <div className="invest-cta-content">
-            <h2>Invest In Our Company We will help you grow Big</h2>
+            <h2>Ready to enhance your audit efficiency?</h2>
             <p>
-              We create relationship of trust with our customer by helping your
-              company grow by investing.
+              Contact CNR IntelliGrow LLP today to discuss how our India-based
+              team can support your accounting firm, CFO office, or finance
+              team anywhere in the world with reliable, high-quality audit and
+              reporting services.
             </p>
             <a href="/" className="invest-cta-btn">
               Connect With Us

@@ -19,6 +19,7 @@
   gap: 48px;
   align-items: center;
   overflow: hidden;
+  animation: growthSectionRise 0.8s ease both;
 }
 
 .growth-top-card::after {
@@ -109,6 +110,10 @@
 
 .bar {
   border-radius: 1px 1px 0 0;
+  transform-origin: bottom;
+  transform: scaleY(0.15);
+  opacity: 0.3;
+  animation: growthBarRise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 .bar.business {
@@ -118,6 +123,14 @@
 .bar.finance {
   background: #4f80e2;
 }
+
+.bar-col:nth-child(1) .bar { animation-delay: 0.08s; }
+.bar-col:nth-child(2) .bar { animation-delay: 0.16s; }
+.bar-col:nth-child(3) .bar { animation-delay: 0.24s; }
+.bar-col:nth-child(4) .bar { animation-delay: 0.32s; }
+.bar-col:nth-child(5) .bar { animation-delay: 0.4s; }
+.bar-col:nth-child(6) .bar { animation-delay: 0.48s; }
+.bar-col:nth-child(7) .bar { animation-delay: 0.56s; }
 
 .bar-col small {
   grid-column: 1 / -1;
@@ -131,6 +144,7 @@
   position: relative;
   z-index: 2;
   max-width: 520px;
+  animation: growthContentFade 0.8s ease 0.2s both;
 }
 
 .growth-kicker-wrap {
@@ -156,8 +170,160 @@
 .growth-content h2 {
   margin: 0;
   color: #203462;
-  font-size: clamp(26px, 2.4vw, 40px);
-  line-height: 1.16;
+  font-size: clamp(28px, 2.2vw, 40px);
+  line-height: 1.2;
+  max-width: 500px;
+}
+
+.growth-copy {
+  margin: 14px 0 0;
+  color: #203462;
+  font-size: clamp(15px, 1.08vw, 19px);
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.growth-procedure-grid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.growth-procedure-card {
+  background: #eef3f8;
+  border: 1px solid #cfe0f5;
+  border-top: 4px solid #4e92e9;
+  border-radius: 18px;
+  padding: 18px 22px 20px;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: growthCardIn 0.7s ease forwards;
+  transition: transform 0.26s ease, box-shadow 0.26s ease, border-color 0.26s ease;
+}
+
+.growth-procedure-card:nth-child(1) {
+  animation-delay: 0.32s;
+}
+
+.growth-procedure-card:nth-child(2) {
+  animation-delay: 0.44s;
+}
+
+.growth-procedure-card:hover {
+  transform: translateY(-4px);
+  border-color: #b6cfea;
+  box-shadow: 0 14px 30px rgba(33, 76, 130, 0.12);
+}
+
+.growth-procedure-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.growth-procedure-id {
+  color: #6097d8;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 20px;
+}
+
+.growth-procedure-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: #d9e8f7;
+  color: #1d63a5;
+  animation: growthIconBob 2.8s ease-in-out infinite;
+}
+
+.growth-procedure-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.growth-procedure-card h3 {
+  margin: 12px 0 10px;
+  color: #123a66;
+  font-size: 35px;
+  line-height: 1.18;
+}
+
+.growth-procedure-card p {
+  margin: 0 0 14px;
+  color: #375575;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.growth-procedure-card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid #cbdbea;
+  border-radius: 14px;
+  background: #f3f7fb;
+  overflow: hidden;
+}
+
+.growth-procedure-card li {
+  padding: 12px 14px;
+  color: #355371;
+  font-size: 15px;
+  line-height: 1.45;
+  border-bottom: 1px dashed #c1d2e5;
+}
+
+.growth-procedure-card li:last-child {
+  border-bottom: 0;
+}
+
+@keyframes growthSectionRise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes growthContentFade {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes growthBarRise {
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes growthCardIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes growthIconBob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
 }
 
 .growth-line {
@@ -246,6 +412,10 @@
     padding: 30px 24px;
   }
 
+  .growth-procedure-grid {
+    grid-template-columns: 1fr;
+  }
+
   .newsletter-row {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -282,6 +452,27 @@
     font-size: 28px;
   }
 
+  .growth-copy {
+    font-size: 14px;
+  }
+
+  .growth-procedure-card {
+    padding: 16px;
+  }
+
+  .growth-procedure-id {
+    font-size: 17px;
+  }
+
+  .growth-procedure-card h3 {
+    font-size: 28px;
+  }
+
+  .growth-procedure-card p,
+  .growth-procedure-card li {
+    font-size: 14px;
+  }
+
   .growth-highlight-row {
     gap: 10px;
   }
@@ -315,5 +506,18 @@
   .newsletter-form button {
     min-width: 0;
     width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .growth-top-card,
+  .growth-content,
+  .bar,
+  .growth-procedure-card,
+  .growth-procedure-icon {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
   }
 }

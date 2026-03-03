@@ -71,19 +71,21 @@
  
 .case-track {
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(230px, 1fr));
-  gap: 3px;
-  transition: opacity 0.35s ease;
+  display: flex;
+  gap: 0;
+  transition: transform 0.58s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
 }
  
 .case-card {
   position: relative;
+  box-sizing: border-box;
+  flex: 0 0 calc(100% / var(--visible-count, 3));
+  padding: 0 8px;
   border-radius: 24px;
   overflow: hidden;
-  width: 80%;
+  width: auto;
   min-height: 312px;
-  justify-self: center;
   background: #c7d2e6;
 }
  
@@ -270,10 +272,6 @@
     font-size: 18px;
   }
  
-  .case-track {
-    gap: 4px;
-  }
- 
   .case-card {
     min-height: 364px;
     border-radius: 26px;
@@ -325,10 +323,6 @@
     max-width: 940px;
     font-size: 21px;
     line-height: 1.75;
-  }
- 
-  .case-track {
-    gap: 5px;
   }
  
   .case-card {
@@ -405,11 +399,6 @@
     border-radius: 28px;
   }
  
-  .case-track {
-    grid-template-columns: repeat(2, minmax(230px, 1fr));
-    gap: 4px;
-  }
- 
   .case-card {
     min-height: 288px;
   }
@@ -446,13 +435,9 @@
     font-size: 14px;
   }
  
-  .case-track {
-    grid-template-columns: 1fr;
-    gap: 3px;
-  }
- 
   .case-card {
     min-height: 256px;
+    padding: 0 4px;
   }
  
   .case-card-caption h3 {
