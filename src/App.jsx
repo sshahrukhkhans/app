@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Header from "./components/layout/header/header";
 import ServicesSection from "./components/layout/services/services";
 import CaseStudiesSection from "./components/layout/case-studies/case-studies";
@@ -9,33 +10,22 @@ import GrowthNewsletterSection from "./components/layout/growth-newsletter/growt
 import TestimonialSection from "./components/layout/testimonial/testimonial";
 import LatestNewsSection from "./components/layout/latest-news/latest-news";
 import SiteFooterSection from "./components/layout/site-footer/site-footer";
+import ServicePage from "./pages/service-page";
  
 function App() {
+  const location = useLocation();
+
   useEffect(() => {
     const sections = document.querySelectorAll(".app-sections > *");
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-        }
-      });
-    }, {
-      threshold: 0.2,
-    });
-
     sections.forEach((section, index) => {
       section.classList.add("scroll-section");
+      section.classList.add("is-visible");
       section.style.setProperty("--reveal-delay", `${index * 1}ms`);
-      observer.observe(section);
     });
+  }, [location.pathname]);
 
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-
-  return (
+  const HomePage = () => (
     <div className="app-sections">
       <Header />
       <ServicesSection />
@@ -48,6 +38,14 @@ function App() {
       <LatestNewsSection />
       <SiteFooterSection />
     </div>
+  );
+
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/services" element={<ServicePage />} />
+      <Route path="*" element={<HomePage />} />
+    </Routes>
   );
 }
  

@@ -53,6 +53,20 @@ img{
   transform: translateY(0);
 }
 
+.service-page-view {
+  min-height: 52vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: #f4f7fb;
+}
+
+.service-page-view h1 {
+  color: #1c2c4f;
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 700;
+}
+
 @media (prefers-reduced-motion: reduce){
   .scroll-section{
     opacity: 1 !important;

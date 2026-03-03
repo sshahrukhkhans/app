@@ -38,17 +38,21 @@
 }
  
 .case-kicker {
-  color: #3b7be9;
-  font-size: 14px;
-  letter-spacing: 6px;
-  font-weight: 500;
+  font-family: "nunito sans", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20.2223px;
+  color: rgb(81, 140, 245);
+  letter-spacing: 0;
 }
  
 .case-header h2 {
   margin: 0;
-  color: #1d3158;
-  font-size: clamp(36px, 3.5vw, 54px);
-  line-height: 1.15;
+  font-family: "red hat display", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  color: rgb(27, 46, 89);
 }
  
 .case-header h2 span {
@@ -58,9 +62,11 @@
 .case-header p {
   margin: 16px auto 0;
   max-width: 760px;
-  color: #70809c;
-  font-size: 15px;
-  line-height: 1.7;
+  font-family: "nunito sans", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30.006px;
+  color: rgb(111, 127, 144);
 }
  
 .case-viewport {
@@ -117,17 +123,22 @@
  
 .case-card-caption h3 {
   margin: 0;
-  color: #1d3158;
-  font-size: 17px;
-  line-height: 1.25;
+  font-family: "red hat display", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.7499px;
+  color: #000000;
   transition: color 0.28s ease;
 }
  
 .case-card-caption span {
   display: block;
   margin-top: 5px;
+  font-family: "nunito sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21.7778px;
   color: #2ec0f4;
-  font-size: 13px;
   transition: color 0.28s ease;
 }
  
