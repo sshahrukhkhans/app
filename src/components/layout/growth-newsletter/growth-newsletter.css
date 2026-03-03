@@ -1,5 +1,5 @@
 .growth-news-section {
-  padding: 80px 0 94px;
+  padding: 108px 0 122px;
   background:
     repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.09) 0 2px, transparent 2px 12px),
     linear-gradient(180deg, #4b80eb, #518cf6);
@@ -13,7 +13,8 @@
   position: relative;
   border-radius: 16px;
   background: linear-gradient(125deg, #f6f7fb 0%, #f2f3f7 56%, #eceef3 100%);
-  padding: 44px 52px;
+  min-height: 520px;
+  padding: 56px 62px;
   display: grid;
   grid-template-columns: minmax(390px, 1.03fr) minmax(350px, 0.97fr);
   gap: 48px;
@@ -89,7 +90,7 @@
 .growth-bars {
   border-left: 1px solid #cbced6;
   border-bottom: 1px solid #cbced6;
-  min-height: 238px;
+  min-height: 290px;
   padding: 0 8px 0 10px;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -458,7 +459,8 @@
   .growth-top-card {
     grid-template-columns: 1fr;
     gap: 28px;
-    padding: 30px 24px;
+    min-height: 0;
+    padding: 38px 28px;
   }
 
   .growth-procedure-grid {
@@ -489,11 +491,11 @@
 
 @media (max-width: 780px) {
   .growth-news-section {
-    padding: 66px 0 74px;
+    padding: 78px 0 88px;
   }
 
   .growth-bars {
-    min-height: 170px;
+    min-height: 200px;
     gap: 7px;
   }
 
