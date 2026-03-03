@@ -190,6 +190,17 @@
 }
 
 @media (max-width: 1400px) {
+  .latest-news-slider {
+    gap: 16px;
+  }
+
+  .latest-news-grid {
+    gap: 16px;
+    grid-auto-columns: calc(
+      (100% - (var(--visible-count, 3) - 1) * 16px) / var(--visible-count, 3)
+    );
+  }
+
   .latest-news-arrow {
     width: 58px;
     height: 58px;

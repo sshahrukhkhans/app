@@ -17,6 +17,8 @@ const testimonials = [
 ];
 
 const partnerLogos = [
+
+
   { name: "XARION", tag: "BUSINESS FIRM" },
   { name: "Busineratec", tag: "BUSINESS FIRM" },
   { name: "BradeNer's", tag: "CONSULTATION" },

@@ -1,63 +1,46 @@
 import logoCnr from "../../../assets/images/logo-cnr.webp";
 import "./site-footer.css";
 
-const usefulLinks = [
-  "Services",
-  "Controls",
-  "Industries",
-  "Contact",
-];
-
 const SiteFooterSection = () => {
   return (
-    <section className="site-footer-section">
+    <footer className="site-footer-section">
       <div className="container site-footer-wrap">
-        <div className="site-footer-cta">
-          <div className="site-footer-brand">
-            <img src={logoCnr} alt="CNR logo" />
-            <h3>CNR IntelliGrow LLP</h3>
-          </div>
-          <h2>
-            Your Trusted India-Based Audit Support Partner for Global Firms and
-            Finance Teams
-          </h2>
-          <p>
-            India-based audit and reporting support for accounting firms and
-            finance teams worldwide across planning, documentation, testing,
-            controls, and secure engagement delivery.
-          </p>
-          <p className="site-footer-standards">
-            GAAP | IFRS | standards-focused support
-          </p>
+        <div className="site-footer-col site-footer-brand-col">
+          <img src={logoCnr} alt="CNR logo" />
+          <h3>CNR IntelliGrow LLP</h3>
         </div>
 
-        <div className="site-footer-links">
-          <h3>QUICK LINKS</h3>
-          <span className="site-footer-links-line" aria-hidden="true" />
-          <ul>
-            {usefulLinks.map((link) => (
-              <li key={link}>
-                <a href="/">{link}</a>
-              </li>
-            ))}
-          </ul>
+        <div className="site-footer-col">
+          <h4>OUR ADDRESS</h4>
+          <p>No.14/6M, Dhanrith Villa, Hospital Road,</p>
+          <p>Sulur, Coimbatore - 641402</p>
+          <p>Tamil Nadu, Southern India</p>
         </div>
 
-        <div className="site-footer-meta">
-          <div className="site-footer-block">
-            <h3>CONTACT</h3>
-            <a href="mailto:cnrintelligrow@gmail.com">cnrintelligrow@gmail.com</a>
-            <a href="tel:+919442580495">+91 9442580495</a>
-            <p>
-              No.14/6M, Dhanrith Villa, Hospital Road, Sulur, Coimbatore -
-              641402
-            </p>
-          </div>
+        <div className="site-footer-col">
+          <h4>HOURS</h4>
+          <p>Mon - Fri: 9am - 5:30pm</p>
+          <p>Sat & Sun: Closed</p>
+        </div>
 
-          <div className="site-footer-block">
-            <h3>ORGANIZATION</h3>
-            <p>A Division of Chithiraipandian and Co., Chartered Accountants</p>
-            <p>Tamil Nadu, Southern India</p>
+        <div className="site-footer-col">
+          <h4>FOLLOW US</h4>
+          <div className="site-footer-socials">
+            <a href="/" aria-label="Instagram">
+              ig
+            </a>
+            <a href="/" aria-label="Facebook">
+              fb
+            </a>
+            <a href="/" aria-label="X">
+              x
+            </a>
+            <a href="/" aria-label="LinkedIn">
+              in
+            </a>
+            <a href="/" aria-label="TikTok">
+              tk
+            </a>
           </div>
         </div>
       </div>
@@ -66,7 +49,7 @@ const SiteFooterSection = () => {
         <p>© 2026 CNR IntelliGrow LLP. All rights reserved.</p>
         <p>A Division of Chithiraipandian and Co., Chartered Accountants</p>
       </div>
-    </section>
+    </footer>
   );
 };
 

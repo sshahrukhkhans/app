@@ -8,7 +8,6 @@ const Navbar = () => {
           <img className="logo-mark" src={logoCnr} alt="CNR logo" />
           <span className="logo-copy">
             <span className="logo-title">CNR IntelliGrowth Solutions</span>
-            <span className="logo-subtitle">Your Trusted India-Based Audit Support Partner</span>
           </span>
         </a>
         <ul className="nav-links">
@@ -17,10 +16,6 @@ const Navbar = () => {
           <li><a href="/">Industries</a></li>
           <li><a href="/">Contact</a></li>
         </ul>
-        <div className="nav-actions">
-          <button className="quote-btn">+91 9442580495</button>
-          <div className="hamburger">☰</div>
-        </div>
       </div>
     </nav>
   );

@@ -1,7 +1,5 @@
 import "./why-choose-us.css";
 import bannerMain from "../../../assets/images/h3-banner-main.png";
-import teamBanner from "../../../assets/images/h3-banner-team.png";
-import chartBanner from "../../../assets/images/h3-banner-chart.png";
 
 const reasons = [
   {
@@ -78,7 +76,6 @@ const WhyChooseUsSection = () => {
         <div className="why-media" aria-hidden="true">
           <span className="why-semi-circle" />
           <span className="why-small-dot" />
-          <img className="why-team-banner" src={teamBanner} alt="" loading="lazy" />
 
           <img
             className="why-team"
@@ -87,7 +84,6 @@ const WhyChooseUsSection = () => {
             loading="lazy"
             referrerPolicy="no-referrer"
           />
-          <img className="why-chart-banner" src={chartBanner} alt="" loading="lazy" />
         </div>
       </div>
     </section>

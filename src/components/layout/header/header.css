@@ -76,9 +76,9 @@
 .nav-container {
   min-height: 86px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  gap: 18px;
+  gap: 24px;
 }
  
 .logo {
@@ -88,6 +88,8 @@
   gap: 10px;
   color: #17406f;
   text-align: left;
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 .logo-mark {
@@ -105,9 +107,10 @@
 }
 
 .logo-title {
-  font-size: 32px;
+  font-size: clamp(28px, 2.2vw, 36px);
   font-weight: 700;
   letter-spacing: 0.2px;
+  line-height: 1.05;
 }
 
 .logo-subtitle {
@@ -119,10 +122,17 @@
  
 .nav-links {
   display: flex;
-  gap: 30px;
+  gap: 34px;
   font-weight: 500;
   color: #223047;
-  margin-left: 28px;
+  margin-left: auto;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  font-size: 16px;
+  line-height: 1.1;
 }
  
 .nav-links a:hover {
@@ -193,13 +203,14 @@
  
 .hero-content {
   position: relative;
-  z-index: 4;
+  z-index: 6;
   width: 100%;
   min-height: 820px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   text-align: center;
+  padding-top: 150px;
 }
  
 .hero-copy {
@@ -226,7 +237,7 @@
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  white-space: nowrap;
+  white-space: normal;
 }
  
 .hero h1 span {
@@ -272,9 +283,9 @@
 .hero-person {
   position: absolute;
   bottom: 0;
-  z-index: 5;
+  z-index: 3;
   pointer-events: none;
-  height: min(46vw, 640px);
+  height: min(40vw, 560px);
   width: auto;
   object-fit: contain;
 }
@@ -338,6 +349,21 @@
   border: 6px solid rgba(62, 196, 248, 0.5);
   z-index: 2;
 }
+
+@media (max-width: 1200px) {
+  .logo-title {
+    font-size: 26px;
+  }
+
+  .logo-subtitle {
+    font-size: 12px;
+  }
+
+  .nav-links {
+    gap: 20px;
+    margin-left: auto;
+  }
+}
  
 @media (max-width: 980px) {
   .nav-links {
@@ -352,6 +378,7 @@
 
   .hero-content {
     min-height: auto;
+    padding-top: 0;
   }
  
   .hero-copy {
