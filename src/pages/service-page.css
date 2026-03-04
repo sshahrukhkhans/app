@@ -111,7 +111,7 @@
   height: 28px;
   display: grid;
   place-items: center;
-  color: #2e77e8;
+  color: rgb(56, 201, 247);
   flex-shrink: 0;
 }
 
@@ -138,7 +138,7 @@
 
 .service-link-item.is-active .service-link-arrow,
 .service-link-item.is-active .service-link-icon {
-  color: #2e77e8;
+  color: rgb(56, 201, 247);
 }
 
 .service-copy h2 {
@@ -160,7 +160,7 @@
 }
 
 .service-copy .service-highlight {
-  color: #2f75e5;
+  color: rgb(56, 201, 247);
   font-weight: 600;
 }
 
