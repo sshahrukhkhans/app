@@ -112,7 +112,11 @@ const ProcessSection = () => {
             <span className="process-kicker">PROCESS</span>
           </div>
 
-          <h2>Helping Ventures For Being Successful</h2>
+          <h2>
+            Helping Ventures For
+            <br />
+            Being Successful
+          </h2>
 
           <div className="process-points">
             <article className="process-point">

@@ -83,17 +83,20 @@
 
 .process-stat-card strong {
   display: block;
-  font-size: 40px;
-  line-height: 1;
-  font-weight: 400;
-  color: #35bdf0;
+  font-family: "red hat display", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 36px;
+  color: rgb(56, 201, 247);
 }
 
 .process-stat-card p {
   margin: 8px 0 0;
-  color: #223760;
-  font-size: 24px;
-  font-weight: 600;
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.7499px;
+  color: rgb(27, 46, 89);
 }
 
 .process-image-wrap {
@@ -129,17 +132,21 @@
 }
 
 .process-kicker {
-  color: #3f74e2;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 4px;
+  font-family: "nunito sans", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20.2223px;
+  color: rgb(81, 140, 245);
+  letter-spacing: 0;
 }
 
 .process-content h2 {
   margin: 0;
-  color: #1f3563;
-  font-size: clamp(30px, 2.7vw, 46px);
-  line-height: 1.12;
+  font-family: "red hat display", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  color: rgb(27, 46, 89);
 }
 
 .process-points {
@@ -168,15 +175,20 @@
 
 .process-point h3 {
   margin: 2px 0 6px;
-  color: #1f2c44;
-  font-size: clamp(20px, 1.25vw, 26px);
+  font-family: "red hat display", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24.1666px;
+  color: rgb(28, 37, 57);
 }
 
 .process-point p {
   margin: 0;
-  color: #6e7f97;
-  font-size: 15px;
-  line-height: 1.55;
+  font-family: "nunito sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: rgb(111, 127, 144);
 }
 
 .process-btn {
@@ -220,11 +232,19 @@
   }
 
   .process-stat-card strong {
-    font-size: 40px;
+    font-family: "red hat display", sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 36px;
+    color: rgb(56, 201, 247);
   }
 
   .process-stat-card p {
-    font-size: 22px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21.7499px;
+    color: rgb(27, 46, 89);
   }
 
   .process-image-wrap {

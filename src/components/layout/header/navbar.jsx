@@ -8,7 +8,7 @@ const Navbar = () => {
         <Link className="logo" to="/">
           <img className="logo-mark" src={logoCnr} alt="CNR logo" />
           <span className="logo-copy">
-            <span className="logo-title">CNR IntelliGrowth Solutions</span>
+            <span className="logo-title">CNR IntelliGrowth LLP</span>
           </span>
         </Link>
         <ul className="nav-links">
