@@ -27,17 +27,21 @@
 }
 
 .latest-news-kicker {
-  color: #3f78e6;
+  color: rgb(81, 140, 245);
+  font-family: "nunito sans", sans-serif;
   font-size: 13px;
-  letter-spacing: 6px;
-  font-weight: 500;
+  font-weight: 400;
+  line-height: 20.2223px;
+  letter-spacing: 0.22em;
 }
 
 .latest-news-header h2 {
   margin: 0;
-  color: #1d3158;
-  font-size: clamp(30px, 2.4vw, 42px);
-  line-height: 1.15;
+  font-family: "red hat display", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  color: rgb(27, 46, 89);
 }
 
 .latest-news-header h2 span {
@@ -47,9 +51,11 @@
 .latest-news-header p {
   margin: 14px auto 0;
   max-width: 760px;
-  color: #6f809d;
-  font-size: 14px;
-  line-height: 1.7;
+  font-family: "nunito sans", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30.006px;
+  color: rgb(111, 127, 144);
 }
 
 .latest-news-slider {
@@ -147,15 +153,21 @@
 
 .latest-news-author h3 {
   margin: 0;
-  color: #2a4578;
-  font-size: 15px;
+  font-family: "red hat display", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19.3333px;
+  color: rgb(39, 61, 113);
 }
 
 .latest-news-author span {
   display: block;
   margin-top: 2px;
-  color: #7788a2;
+  font-family: "nunito sans", sans-serif;
   font-size: 12px;
+  font-weight: 400;
+  line-height: 18.6667px;
+  color: rgb(93, 102, 111);
 }
 
 .latest-news-body {
@@ -167,26 +179,32 @@
 
 .latest-news-body h4 {
   margin: 0;
-  color: #1f3159;
-  font-size: 17px;
-  line-height: 1.35;
+  font-family: "red hat display", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  color: rgb(27, 46, 89);
 }
 
 .latest-news-body p {
   margin: 14px 0 16px;
-  color: #667791;
-  font-size: 14px;
-  line-height: 1.65;
+  font-family: "nunito sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: rgb(93, 102, 111);
 }
 
 .latest-news-body a {
   margin-top: auto;
   display: inline-flex;
   align-items: center;
-  color: #2c4d8f;
-  font-size: 16px;
+  font-family: manrope, sans-serif;
+  font-size: 14px;
   font-weight: 700;
-  letter-spacing: 0.2px;
+  line-height: 21.7778px;
+  color: rgb(56, 201, 247);
+  letter-spacing: 0;
 }
 
 @media (max-width: 1400px) {
@@ -214,16 +232,16 @@
   }
 
   .latest-news-kicker {
-    font-size: 12px;
-    letter-spacing: 4px;
+    font-size: 13px;
+    letter-spacing: 0.22em;
   }
 
   .latest-news-header h2 {
-    font-size: 32px;
+    font-size: 40px;
   }
 
   .latest-news-header p {
-    font-size: 14px;
+    font-size: 18px;
   }
 
   .latest-news-slider {

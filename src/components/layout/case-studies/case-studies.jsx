@@ -79,7 +79,7 @@ const CaseStudiesSection = () => {
             <span className="case-kicker">INDUSTRY EXPERTISE</span>
           </div>
  
-          <h2>Domain-Specific Audit Knowledge</h2>
+          <h2>Domain-Specific Audit <span>Knowledge</span></h2>
           <p>
             Our delivery model adapts to industry-specific risk areas, transaction patterns, and reporting issues so support remains relevant across sectors with different audit priorities.
           </p>

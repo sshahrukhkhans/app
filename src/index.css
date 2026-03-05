@@ -40,6 +40,40 @@ img{
   gap: 20px;
 }
 
+.page-route-transition {
+  width: 100%;
+}
+
+.page-route-transition.fade-in {
+  animation: pageFadeIn 1ms linear both;
+}
+
+.page-route-transition.fade-out {
+  animation: pageFadeOut 1ms linear both;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pageFadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
 .scroll-section{
   opacity: 0;
   transform: translateY(46px);
@@ -68,6 +102,11 @@ img{
 }
 
 @media (prefers-reduced-motion: reduce){
+  .page-route-transition.fade-in,
+  .page-route-transition.fade-out {
+    animation: none !important;
+  }
+
   .scroll-section{
     opacity: 1 !important;
     transform: none !important;
