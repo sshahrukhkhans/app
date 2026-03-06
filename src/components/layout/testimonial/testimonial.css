@@ -1,16 +1,16 @@
 .testimonial-section {
-  background: #eef3fa;
-  padding: 92px 0 82px;
+  background: #edf1f7;
+  padding: 46px 0 42px;
 }
 
 .testimonial-wrap {
-  max-width: 1240px;
+  max-width: 1440px;
 }
 
 .testimonial-top {
   display: grid;
-  grid-template-columns: minmax(240px, 0.72fr) minmax(0, 1.28fr);
-  gap: 42px;
+  grid-template-columns: minmax(280px, 0.62fr) minmax(0, 1.38fr);
+  gap: 46px;
   align-items: start;
 }
 
@@ -67,22 +67,25 @@
 
 .testimonial-cards {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 24px;
+  align-items: stretch;
 }
 
 .testimonial-item {
   display: grid;
-  grid-template-rows: minmax(238px, auto) auto;
+  grid-template-rows: 1fr auto;
   gap: 22px;
+  height: 100%;
 }
 
 .testimonial-card {
   position: relative;
   background: #ffffff;
   border-radius: 12px;
-  min-height: 238px;
-  padding: 36px 34px 30px;
+  min-height: 280px;
+  height: 100%;
+  padding: 40px 36px 32px;
   box-shadow: 0 10px 24px rgba(37, 64, 110, 0.08);
   animation: testimonialRise 0.6s ease both;
 }
@@ -113,6 +116,7 @@
   font-weight: 400;
   line-height: 26px;
   color: rgb(111, 127, 144);
+  overflow-wrap: anywhere;
 }
 
 .testimonial-tail {
@@ -131,12 +135,14 @@
   align-items: center;
   gap: 14px;
   padding-left: 44px;
+  min-height: 54px;
 }
 
 .testimonial-person div {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  min-width: 0;
 }
 
 .testimonial-avatar {
@@ -154,6 +160,9 @@
   font-weight: 700;
   line-height: 21.7499px;
   color: rgb(27, 46, 89);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .testimonial-person span {
@@ -164,6 +173,9 @@
   font-weight: 400;
   line-height: 22.4px;
   color: rgb(111, 127, 144);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .testimonial-dots {

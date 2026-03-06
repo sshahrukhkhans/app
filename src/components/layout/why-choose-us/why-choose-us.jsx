@@ -44,46 +44,45 @@ const WhyChooseUsSection = () => {
   return (
     <section className="why-section">
       <div className="container why-layout">
-        <div className="why-content">
-          <div className="why-kicker-wrap">
-            <span className="why-kicker-line" />
-            <span className="why-kicker">WHY CHOOSE US</span>
+        <div className="why-panel">
+          <div className="why-content">
+            <div className="why-kicker-wrap">
+              <span className="why-kicker-line" />
+              <span className="why-kicker">COMPREHENSIVE AUDIT SUPPORT</span>
+            </div>
+
+            <h2>Main Reasons To Choose Us</h2>
+
+            <div className="why-list">
+              {reasons.map((item) => (
+                <article key={item.title} className="why-item">
+                  <span className="why-item-icon" aria-hidden="true">
+                    <ReasonIcon type={item.icon} />
+                  </span>
+                  <div>
+                    <h3>{item.title}</h3>
+                    <p>{item.desc}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <div className="why-actions">
+              <a href="/" className="why-btn-primary">
+                Learn More
+              </a>
+            </div>
           </div>
 
-          <h2>Main Reasons To Choose Us</h2>
-
-          <div className="why-list">
-            {reasons.map((item) => (
-              <article key={item.title} className="why-item">
-                <span className="why-item-icon" aria-hidden="true">
-                  <ReasonIcon type={item.icon} />
-                </span>
-                <div>
-                  <h3>{item.title}</h3>
-                  <p>{item.desc}</p>
-                </div>
-              </article>
-            ))}
+          <div className="why-media" aria-hidden="true">
+            <img
+              className="why-team"
+              src={bannerMain}
+              alt=""
+              loading="lazy"
+              referrerPolicy="no-referrer"
+            />
           </div>
-
-          <div className="why-actions">
-            <a href="/" className="why-btn-primary">
-              Learn More
-            </a>
-          </div>
-        </div>
-
-        <div className="why-media" aria-hidden="true">
-          <span className="why-semi-circle" />
-          <span className="why-small-dot" />
-
-          <img
-            className="why-team"
-            src={bannerMain}
-            alt=""
-            loading="lazy"
-            referrerPolicy="no-referrer"
-          />
         </div>
       </div>
     </section>

@@ -1,19 +1,47 @@
 .why-section {
   position: relative;
-  background: #f8f8f8;
-  padding: 56px 0 0;
+  background:
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.09) 0 2px, transparent 2px 12px),
+    linear-gradient(180deg, #4b80eb, #518cf6);
+  padding: 44px 0;
 }
 
 .why-layout {
   display: grid;
-  grid-template-columns: minmax(300px, 0.92fr) minmax(420px, 1.08fr);
-  gap: 44px;
+  grid-template-columns: 1fr;
+  gap: 0;
   align-items: center;
+}
+
+.why-layout.container {
+  max-width: 1380px;
+  width: min(92%, 1380px);
+}
+
+.why-panel {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.92fr) minmax(420px, 1.08fr);
+  gap: 36px;
+  align-items: center;
+  background: #edf1f7;
+  border-radius: 30px;
+  padding: 36px 16px 0;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
 }
 
 .why-content {
   text-align: left;
-  max-width: 520px;
+  max-width: 560px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 10px 6px 28px;
+  backdrop-filter: none;
+  margin-left: 40px;
 }
 
 .why-kicker-wrap {
@@ -40,12 +68,13 @@
 
 .why-content h2 {
   margin: 0 0 2px;
-  max-width: 390px;
+  max-width: 100%;
   font-family: "red hat display", sans-serif;
   font-size: 40px;
   font-weight: 700;
   line-height: 48px;
   color: rgb(27, 46, 89);
+  white-space: nowrap;
 }
 
 .why-list {
@@ -100,6 +129,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 14px 30px;
 }
 
@@ -136,17 +166,39 @@
 
 .why-media {
   position: relative;
-  min-height: 760px;
+  min-height: 620px;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
 }
 
 .why-team {
-  max-width: min(100%, 830px);
+  max-width: min(100%, 820px);
   height: auto;
   position: relative;
   z-index: 4;
+}
+
+@media (max-width: 1180px) {
+  .why-panel {
+    grid-template-columns: 1fr;
+    padding: 30px 24px 0;
+  }
+
+  .why-content {
+    max-width: 100%;
+    padding: 8px 0 14px;
+    margin-left: 0;
+  }
+
+  .why-media {
+    min-height: auto;
+    justify-content: center;
+  }
+
+  .why-team {
+    width: min(100%, 640px);
+  }
 }
 
 @keyframes why-team-sway {

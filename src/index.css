@@ -12,7 +12,7 @@
 }
 body{
   min-width: 320px;
-  background: #ffffff;
+  background: #f5f8fe;
   overflow-x: hidden;
 }
 
@@ -26,6 +26,7 @@ ul{
 }
 #root{
   width: 100%;
+  background: #f5f8fe;
   overflow-x: hidden;
 }
 
@@ -40,8 +41,13 @@ img{
   gap: 20px;
 }
 
+.home-page {
+  background: #f5f8fe;
+}
+
 .page-route-transition {
   width: 100%;
+  background: #f5f8fe;
 }
 
 .page-route-transition.fade-in {
@@ -76,15 +82,18 @@ img{
 
 .scroll-section{
   opacity: 0;
-  transform: translateY(46px);
-  transition: opacity 1ms linear,
-    transform 1ms linear;
+  transform: translateY(20px) scale(0.995);
+  filter: blur(2px);
+  transition: opacity 220ms ease,
+    transform 240ms ease,
+    filter 200ms ease;
   transition-delay: var(--reveal-delay, 0ms);
 }
 
 .scroll-section.is-visible{
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
+  filter: blur(0);
 }
 
 .service-page-view {
@@ -99,6 +108,245 @@ img{
   color: #1c2c4f;
   font-size: clamp(32px, 4vw, 56px);
   font-weight: 700;
+}
+
+/* Home-only typography system */
+.home-page .hero h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 54px;
+  font-weight: 700;
+  line-height: 1.42;
+}
+
+.home-page .services-intro h2,
+.home-page .case-header h2,
+.home-page .why-content h2,
+.home-page .process-content h2,
+.home-page .growth-content h2,
+.home-page .testimonial-header h2,
+.home-page .latest-news-header h2,
+.home-page .invest-cta-content h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.home-page .service-card h3,
+.home-page .case-card-caption h3,
+.home-page .why-item h3,
+.home-page .process-point h3,
+.home-page .growth-procedure-card h3,
+.home-page .latest-news-body h4,
+.home-page .testimonial-person h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.home-page .hero p,
+.home-page .services-intro p,
+.home-page .service-card p,
+.home-page .case-header p,
+.home-page .case-card-caption span,
+.home-page .why-item p,
+.home-page .process-point p,
+.home-page .growth-copy,
+.home-page .growth-procedure-card p,
+.home-page .testimonial-header p,
+.home-page .testimonial-card p,
+.home-page .testimonial-person span,
+.home-page .latest-news-header p,
+.home-page .latest-news-body p,
+.home-page .latest-news-author span,
+.home-page .invest-cta-content p {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+.home-page .nav-links a,
+.home-page .hero-buttons button,
+.home-page .services-btn,
+.home-page .why-btn-primary,
+.home-page .process-btn,
+.home-page .latest-news-body a,
+.home-page .hero-tag,
+.home-page .services-kicker,
+.home-page .case-kicker,
+.home-page .why-kicker,
+.home-page .process-kicker,
+.home-page .growth-kicker,
+.home-page .testimonial-kicker,
+.home-page .latest-news-kicker {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.home-page .why-kicker-wrap,
+.home-page .process-kicker-wrap,
+.home-page .testimonial-kicker-wrap,
+.home-page .latest-news-kicker-wrap {
+  display: none !important;
+}
+
+@media (max-width: 1400px) {
+  .home-page .hero h1 {
+    font-size: 48px;
+  }
+
+  .home-page .services-intro h2,
+  .home-page .case-header h2,
+  .home-page .why-content h2,
+  .home-page .process-content h2,
+  .home-page .growth-content h2,
+  .home-page .testimonial-header h2,
+  .home-page .latest-news-header h2,
+  .home-page .invest-cta-content h2 {
+    font-size: 28px;
+  }
+
+  .home-page .service-card h3,
+  .home-page .case-card-caption h3,
+  .home-page .why-item h3,
+  .home-page .process-point h3,
+  .home-page .growth-procedure-card h3,
+  .home-page .latest-news-body h4,
+  .home-page .testimonial-person h3 {
+    font-size: 20px;
+  }
+
+  .home-page .hero p,
+  .home-page .services-intro p,
+  .home-page .service-card p,
+  .home-page .case-header p,
+  .home-page .case-card-caption span,
+  .home-page .why-item p,
+  .home-page .process-point p,
+  .home-page .growth-copy,
+  .home-page .growth-procedure-card p,
+  .home-page .testimonial-header p,
+  .home-page .testimonial-card p,
+  .home-page .testimonial-person span,
+  .home-page .latest-news-header p,
+  .home-page .latest-news-body p,
+  .home-page .latest-news-author span,
+  .home-page .invest-cta-content p {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .home-page .hero h1 {
+    font-size: 36px;
+  }
+
+  .home-page .services-intro h2,
+  .home-page .case-header h2,
+  .home-page .why-content h2,
+  .home-page .process-content h2,
+  .home-page .growth-content h2,
+  .home-page .testimonial-header h2,
+  .home-page .latest-news-header h2,
+  .home-page .invest-cta-content h2 {
+    font-size: 24px;
+  }
+
+  .home-page .service-card h3,
+  .home-page .case-card-caption h3,
+  .home-page .why-item h3,
+  .home-page .process-point h3,
+  .home-page .growth-procedure-card h3,
+  .home-page .latest-news-body h4,
+  .home-page .testimonial-person h3 {
+    font-size: 18px;
+  }
+
+  .home-page .hero p,
+  .home-page .services-intro p,
+  .home-page .service-card p,
+  .home-page .case-header p,
+  .home-page .case-card-caption span,
+  .home-page .why-item p,
+  .home-page .process-point p,
+  .home-page .growth-copy,
+  .home-page .growth-procedure-card p,
+  .home-page .testimonial-header p,
+  .home-page .testimonial-card p,
+  .home-page .testimonial-person span,
+  .home-page .latest-news-header p,
+  .home-page .latest-news-body p,
+  .home-page .latest-news-author span,
+  .home-page .invest-cta-content p {
+    font-size: 16px;
+  }
+
+  .home-page .nav-links a,
+  .home-page .hero-buttons button,
+  .home-page .services-btn,
+  .home-page .why-btn-primary,
+  .home-page .process-btn,
+  .home-page .latest-news-body a,
+  .home-page .hero-tag,
+  .home-page .services-kicker,
+  .home-page .case-kicker,
+  .home-page .why-kicker,
+  .home-page .process-kicker,
+  .home-page .growth-kicker,
+  .home-page .testimonial-kicker,
+  .home-page .latest-news-kicker {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-page .hero h1 {
+    font-size: 30px;
+  }
+
+  .home-page .services-intro h2,
+  .home-page .case-header h2,
+  .home-page .why-content h2,
+  .home-page .process-content h2,
+  .home-page .growth-content h2,
+  .home-page .testimonial-header h2,
+  .home-page .latest-news-header h2,
+  .home-page .invest-cta-content h2 {
+    font-size: 20px;
+  }
+
+  .home-page .service-card h3,
+  .home-page .case-card-caption h3,
+  .home-page .why-item h3,
+  .home-page .process-point h3,
+  .home-page .growth-procedure-card h3,
+  .home-page .latest-news-body h4,
+  .home-page .testimonial-person h3 {
+    font-size: 16px;
+  }
+
+  .home-page .hero p,
+  .home-page .services-intro p,
+  .home-page .service-card p,
+  .home-page .case-header p,
+  .home-page .case-card-caption span,
+  .home-page .why-item p,
+  .home-page .process-point p,
+  .home-page .growth-copy,
+  .home-page .growth-procedure-card p,
+  .home-page .testimonial-header p,
+  .home-page .testimonial-card p,
+  .home-page .testimonial-person span,
+  .home-page .latest-news-header p,
+  .home-page .latest-news-body p,
+  .home-page .latest-news-author span,
+  .home-page .invest-cta-content p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
 }
 
 @media (prefers-reduced-motion: reduce){

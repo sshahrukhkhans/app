@@ -166,7 +166,7 @@ const AboutPage = () => {
 
           <article className="about-page-copy">
             <p>
-              CNR IntelliGrowth LLP provides structured India-based support for
+              CNR IntelliGrow LLP provides structured India-based support for
               accounting firms and finance teams operating across global
               reporting environments. We support planning, documentation,
               testing, controls, and final review workflows with delivery

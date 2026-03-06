@@ -14,6 +14,12 @@ const testimonials = [
     name: "Miranda Stocklin",
     place: "New York",
   },
+  {
+    quote:
+      "Professional communication, consistent delivery, and excellent quality made every review cycle smooth for our team.",
+    name: "Rayan Kellar",
+    place: "Chicago",
+  },
 ];
 
 const partnerLogos = [

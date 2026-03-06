@@ -4,7 +4,6 @@ import project01 from "../../../assets/images/project-01.jpg";
 import project02 from "../../../assets/images/project-02.jpg";
 import project03 from "../../../assets/images/project-03.jpg";
 import project04 from "../../../assets/images/project-04.jpg";
-import profileImage from "../../../assets/images/profile.jpg";
 
 const newsItems = [
   {
@@ -31,17 +30,41 @@ const newsItems = [
     title: "Smart audit planning for high-growth service teams",
     excerpt: "We denounce with righteous indignation and dislike men who are so beguiled...",
   },
+  {
+    image: project01,
+    date: "APRIL 02, 2023",
+    title: "Why risk-focused reviews improve financial confidence",
+    excerpt: "We denounce with righteous indignation and dislike men who are so beguiled...",
+  },
+  {
+    image: project02,
+    date: "APRIL 18, 2023",
+    title: "Operational checks that reduce audit cycle delays",
+    excerpt: "We denounce with righteous indignation and dislike men who are so beguiled...",
+  },
+  {
+    image: project03,
+    date: "MAY 05, 2023",
+    title: "Building scalable review workflows for growing teams",
+    excerpt: "We denounce with righteous indignation and dislike men who are so beguiled...",
+  },
+  {
+    image: project04,
+    date: "MAY 21, 2023",
+    title: "Better documentation habits for stronger engagements",
+    excerpt: "We denounce with righteous indignation and dislike men who are so beguiled...",
+  },
 ];
 
 const LatestNewsSection = () => {
   const [start, setStart] = useState(0);
-  const [visibleCount, setVisibleCount] = useState(3);
+  const [visibleCount, setVisibleCount] = useState(4);
   const maxStart = Math.max(0, newsItems.length - visibleCount);
 
   useEffect(() => {
     const updateVisible = () => {
       const nextVisible =
-        window.innerWidth <= 780 ? 1 : window.innerWidth <= 1200 ? 2 : 3;
+        window.innerWidth <= 780 ? 1 : window.innerWidth <= 1200 ? 2 : 4;
       setVisibleCount(nextVisible);
       setStart((prev) =>
         Math.min(prev, Math.max(0, newsItems.length - nextVisible)),
@@ -52,6 +75,16 @@ const LatestNewsSection = () => {
     window.addEventListener("resize", updateVisible);
     return () => window.removeEventListener("resize", updateVisible);
   }, []);
+
+  useEffect(() => {
+    if (maxStart <= 0) return;
+
+    const timer = setInterval(() => {
+      setStart((prev) => (prev >= maxStart ? 0 : prev + 1));
+    }, 3000);
+
+    return () => clearInterval(timer);
+  }, [maxStart]);
 
   const handlePrev = () => setStart((prev) => Math.max(prev - 1, 0));
   const handleNext = () => setStart((prev) => Math.min(prev + 1, maxStart));
@@ -97,14 +130,6 @@ const LatestNewsSection = () => {
                   <div className="latest-news-image-wrap">
                     <img src={item.image} alt={item.title} loading="lazy" />
                     <span className="latest-news-date">{item.date}</span>
-                  </div>
-
-                  <div className="latest-news-author">
-                    <img src={profileImage} alt="Rayan Kellar" />
-                    <div>
-                      <h3>Rayan Kellar</h3>
-                      <span>Consultant</span>
-                    </div>
                   </div>
 
                   <div className="latest-news-body">

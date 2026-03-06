@@ -1,4 +1,7 @@
 import logoCnr from "../../../assets/images/logo-cnr.webp";
+import instagramIcon from "../../../assets/images/Instagram.png";
+import facebookIcon from "../../../assets/images/Facebook.png";
+import xIcon from "../../../assets/images/twitter.jpg";
 import "./site-footer.css";
 
 const SiteFooterSection = () => {
@@ -24,22 +27,15 @@ const SiteFooterSection = () => {
         </div>
 
         <div className="site-footer-col">
-          <h4>FOLLOW US</h4>
           <div className="site-footer-socials">
             <a href="/" aria-label="Instagram">
-              ig
+              <img src={instagramIcon} alt="" />
             </a>
             <a href="/" aria-label="Facebook">
-              fb
+              <img src={facebookIcon} alt="" />
             </a>
             <a href="/" aria-label="X">
-              x
-            </a>
-            <a href="/" aria-label="LinkedIn">
-              in
-            </a>
-            <a href="/" aria-label="TikTok">
-              tk
+              <img src={xIcon} alt="" />
             </a>
           </div>
         </div>

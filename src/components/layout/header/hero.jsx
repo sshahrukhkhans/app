@@ -12,14 +12,17 @@ const Hero = () => {
       <img className="hero-arc hero-arc-left" src={shapeOne} alt="" />
       <img className="hero-arc hero-arc-right" src={shapeOne} alt="" />
       <span className="hero-blob hero-blob-left" />
+      <span className="hero-blob hero-blob-mid-left" />
       <span className="hero-blob hero-blob-right" />
+      <span className="hero-blob hero-blob-mid-right" />
       <span className="hero-ring" />
+      <span className="hero-ring hero-ring-left" />
  
       <div className="container hero-content">
         <div className="hero-copy">
           <span className="hero-tag">GROW YOUR BUSINESS WITH US</span>
           <h1>
-            We Provide <span>Investment</span> <br />
+            We Provide Investment <br />
             Reliable audit support that
             <br />
             strengthens partner review confidence.

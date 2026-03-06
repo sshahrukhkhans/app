@@ -1,0 +1,99 @@
+import { Link } from "react-router-dom";
+import "../components/layout/header/header.css";
+import "./contact-page.css";
+import Topbar from "../components/layout/header/topbar";
+import Navbar from "../components/layout/header/navbar";
+import SiteFooterSection from "../components/layout/site-footer/site-footer";
+import serviceBanner from "../assets/images/banner.jpg";
+import project01 from "../assets/images/project-01.jpg";
+import project02 from "../assets/images/project-02.jpg";
+import project03 from "../assets/images/project-03.jpg";
+
+const contactCards = [
+  {
+    title: "Send Us Mail",
+    lines: ["Write to our support desk", "General queries and onboarding"],
+    image: project01,
+    icon: "✉",
+  },
+  {
+    title: "Call Us Anytime",
+    lines: ["Available during business hours", "Mon - Fri: 9am - 5:30pm"],
+    image: project02,
+    icon: "☎",
+  },
+  {
+    title: "Visit Our Office",
+    lines: [
+      "No.14/6M, Dhanrith Villa, Hospital Road,",
+      "Sulur, Coimbatore - 641402",
+    ],
+    image: project03,
+    icon: "⌖",
+  },
+];
+
+const ContactPage = () => {
+  return (
+    <div className="app-sections">
+      <Topbar />
+      <Navbar />
+
+      <section className="contact-page-hero" aria-label="Contact us banner">
+        <img src={serviceBanner} alt="Contact us banner" loading="lazy" />
+        <div className="contact-page-hero-overlay">
+          <div className="container">
+            <h1>Contact Us</h1>
+            <nav className="contact-page-breadcrumb" aria-label="Breadcrumb">
+              <Link to="/">Home</Link>
+              <span aria-hidden="true">&rsaquo;</span>
+              <span>Contact Us</span>
+            </nav>
+          </div>
+        </div>
+      </section>
+
+      <section className="contact-info-section" aria-label="Contact information">
+        <div className="container contact-info-grid">
+          {contactCards.map((item) => (
+            <article key={item.title} className="contact-info-card">
+              <img src={item.image} alt={item.title} loading="lazy" />
+              <div className="contact-info-body">
+                <span className="contact-info-icon" aria-hidden="true">
+                  {item.icon}
+                </span>
+                <h3>{item.title}</h3>
+                {item.lines.map((line) => (
+                  <p key={line}>{line}</p>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="contact-form-section" aria-label="Contact form">
+        <div className="container contact-form-wrap">
+          <div className="contact-form-header">
+            <h2>Drop Us A Line</h2>
+            <p>Our team will arrange your first business consultation at no cost.</p>
+            <span className="contact-form-divider" aria-hidden="true" />
+          </div>
+
+          <form className="contact-form-grid">
+            <input type="text" placeholder="Name*" />
+            <input type="text" placeholder="Phone No*" />
+            <input type="email" placeholder="E-mail*" />
+            <input type="text" placeholder="Subject*" />
+            <textarea placeholder="Message*" rows={6} />
+            <button type="button">Send Mail</button>
+          </form>
+        </div>
+      </section>
+
+      <SiteFooterSection />
+    </div>
+  );
+};
+
+export default ContactPage;

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./process.css";
-import processImage from "../../../assets/images/process.png";
+import industryImage from "../../../assets/images/industry.png";
 
 const processStats = [
   {
@@ -88,59 +88,37 @@ const ProcessSection = () => {
 
   return (
     <section ref={sectionRef} className="process-section">
-      <div className="container process-layout">
-        <div className="process-stats" aria-label="Key achievements">
-          {processStats.map((item, index) => (
-            <article key={item.label} className="process-stat-card" style={{ "--delay": `${index * 140}ms` }}>
-              <span className="process-stat-ribbon" aria-hidden="true" />
-              <span className="process-stat-icon" aria-hidden="true">
-                <StatIcon type={item.type} />
-              </span>
-              <strong>{item.count === 1500 ? projectCount : awardCount}</strong>
-              <p>{item.label}</p>
-            </article>
-          ))}
-        </div>
-
-        <div className="process-image-wrap" aria-hidden="true">
-          <img src={processImage} alt="" loading="lazy" />
-        </div>
-
-        <div className="process-content">
+      <div className="container">
+        <header className="process-header">
           <div className="process-kicker-wrap">
             <span className="process-kicker-line" />
             <span className="process-kicker">PROCESS</span>
           </div>
+          <h2>Helping Ventures For Being Successful</h2>
+        </header>
 
-          <h2>
-            Helping Ventures For
-            <br />
-            Being Successful
-          </h2>
-
-          <div className="process-points">
-            <article className="process-point">
-              <span className="process-point-icon" aria-hidden="true">
-                ▣
-              </span>
-              <div>
-                <h3>Project Analysis</h3>
-                <p>A business firm is either the sole partnership owned by an individual.</p>
-              </div>
-            </article>
-
-            <article className="process-point">
-              <span className="process-point-icon" aria-hidden="true">
-                ▦
-              </span>
-              <div>
-                <h3>Decision &amp; Consultancy</h3>
-                <p>Designing and implementing technology tools that they need to win.</p>
-              </div>
-            </article>
+        <div className="process-layout">
+          <div className="process-stats" aria-label="Key achievements">
+            <p className="process-stats-copy">
+              We extend beyond core audit execution into tax support, regulatory documentation,
+              <br />
+              and completion-stage review support where technical consistency matters most.
+            </p>
+            {processStats.map((item, index) => (
+              <article key={item.label} className="process-stat-card" style={{ "--delay": `${index * 140}ms` }}>
+                <span className="process-stat-ribbon" aria-hidden="true" />
+                <span className="process-stat-icon" aria-hidden="true">
+                  <StatIcon type={item.type} />
+                </span>
+                <strong>{item.count === 1500 ? projectCount : awardCount}</strong>
+                <p>{item.label}</p>
+              </article>
+            ))}
           </div>
 
-          <a href="/" className="process-btn">Learn More</a>
+          <div className="process-industry-wrap" aria-hidden="true">
+            <img src={industryImage} alt="" loading="lazy" />
+          </div>
         </div>
       </div>
     </section>

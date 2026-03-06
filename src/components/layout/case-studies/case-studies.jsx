@@ -9,39 +9,28 @@ import project06 from "../../../assets/images/project-06.jpg";
  
 const cases = [
   {
-    title: "Manufacturing & Trading",
-    category: "Inventory valuation and revenue recognition",
+    title: "Substantive Audit Procedures",
     image: project01,
   },
   {
-    title: "Healthcare",
-    category: "Billing integrity and operational ratio analysis",
+    title: "Internal Controls & Financial Reporting",
     image: project02,
   },
   {
-    title: "Real Estate & Property",
-    category: "Compliance checks and lease analytics",
+    title: "Specialized Support Services",
     image: project03,
   },
   {
-    title: "Not-For-Profit",
-    category: "Restricted grants and transparency reporting",
+    title: "Industry Expertise & Project Management",
     image: project04,
   },
   {
-    title: "IT & SaaS",
-    category: "ASC 606 compliance and deferred revenue",
+    title: "Compliance",
     image: project05,
   },
   {
-    title: "Retail & E-commerce",
-    category: "Transaction testing and gross margin controls",
+    title: "Security & Ethical Standards",
     image: project06,
-  },
-  {
-    title: "Hospitality & Leisure",
-    category: "Seasonality and occupancy metric analytics",
-    image: project01,
   },
 ];
  
@@ -74,14 +63,9 @@ const CaseStudiesSection = () => {
         <span className="case-deco-grid" aria-hidden="true" />
  
         <header className="case-header">
-          <div className="case-kicker-wrap">
-            <span className="case-kicker-line" />
-            <span className="case-kicker">INDUSTRY EXPERTISE</span>
-          </div>
- 
-          <h2>Domain-Specific Audit <span>Knowledge</span></h2>
+          <h2>Core Services</h2>
           <p>
-            Our delivery model adapts to industry-specific risk areas, transaction patterns, and reporting issues so support remains relevant across sectors with different audit priorities.
+            Our team supports US CPA firms with structured planning, disciplined documentation, and audit-ready execution that integrates smoothly into established engagement workflows.
           </p>
         </header>
  
@@ -102,7 +86,6 @@ const CaseStudiesSection = () => {
                 />
                 <div className="case-card-caption">
                   <h3>{item.title}</h3>
-                  <span className="case-card-category">{item.category}</span>
                   <span className="case-card-corner" aria-hidden="true" />
                   <span className="case-card-action" aria-hidden="true">↗</span>
                 </div>
