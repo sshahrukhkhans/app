@@ -25,12 +25,14 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 16px;
+  margin-left: calc((100vw - min(92vw, 1200px)) / -2 + 48px);
 }
  
 .top-right {
   display: flex;
   align-items: center;
   gap: 14px;
+  margin-right: calc((100vw - min(92vw, 1200px)) / -2 + 2px);
 }
 
 .top-right a {
@@ -77,6 +79,7 @@
 }
  
 .nav-container {
+  position: relative;
   min-height: 86px;
   display: flex;
   justify-content: space-between;
@@ -125,9 +128,12 @@
 }
  
 .nav-links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   gap: 0;
-  margin-left: auto;
+  margin-left: 0;
   align-items: center;
   flex-wrap: nowrap;
   list-style: none;
@@ -173,30 +179,41 @@
   outline-offset: 2px;
 }
 
-.nav-socials {
+.nav-contacts {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-left: 30px;
+  margin-left: auto;
+  margin-right: calc((100vw - min(92vw, 1200px)) / -2 + 14px);
 }
 
-.nav-social-link {
+.nav-contact-link {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  overflow: hidden;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border: 1px solid #d4e0f5;
   background: #f2f6fd;
+  color: #2f62d7;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.nav-social-link img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+.nav-contact-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(45, 107, 220, 0.2);
+}
+
+.nav-contact-icon {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
  
 .nav-actions {
@@ -325,13 +342,15 @@
   gap: 24px;
 }
  
-.hero-buttons button {
+.hero-buttons button,
+.hero-buttons a {
   border: none;
   border-radius: 13px;
   padding: 15px 40px;
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
+  text-decoration: none;
 }
  
 .hero-buttons .primary {
@@ -528,26 +547,6 @@
   }
 }
 
-@media (max-width: 1200px) {
-  .logo-title {
-    font-size: 26px;
-  }
-
-  .logo-subtitle {
-    font-size: 12px;
-  }
-
-  .nav-links {
-    min-width: 500px;
-    padding: 6px 14px;
-    margin-left: auto;
-  }
-
-  .nav-socials {
-    margin-left: 20px;
-  }
-}
-
 @media (max-width: 1360px) {
   .logo-title {
     font-size: clamp(20px, 1.9vw, 26px);
@@ -558,7 +557,10 @@
   }
 
   .nav-links {
-    min-width: 520px;
+    left: auto;
+    right: clamp(72px, 8vw, 118px);
+    transform: none;
+    min-width: 500px;
     padding: 6px 14px;
   }
 
@@ -568,23 +570,72 @@
     font-size: 14px;
   }
 
-  .nav-social-link {
+  .nav-contact-link {
     width: 28px;
     height: 28px;
   }
 }
 
-@media (max-width: 980px) {
+@media (max-width: 1200px) {
+  .top-left,
+  .top-right {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   .logo {
     margin-left: 0;
   }
 
   .nav-links {
-    display: none;
+    right: clamp(50px, 6vw, 84px);
+    min-width: 440px;
   }
 
-  .nav-socials {
-    display: none;
+  .nav-contacts {
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 980px) {
+  .nav-container {
+    min-height: auto;
+    padding: 12px 0 14px;
+    flex-wrap: wrap;
+    row-gap: 12px;
+    column-gap: 10px;
+  }
+
+  .logo {
+    margin-left: 0;
+    flex: 1 1 auto;
+  }
+
+  .nav-links {
+    position: static;
+    left: auto;
+    transform: none;
+    display: flex;
+    order: 3;
+    width: 100%;
+    min-width: 0;
+    padding: 6px;
+    border-radius: 12px;
+  }
+
+  .nav-contacts {
+    display: inline-flex;
+    margin-left: auto;
+    margin-right: 0;
+    order: 2;
+    flex-shrink: 0;
+  }
+
+  .nav-links a {
+    min-height: 36px;
+    padding: 0 8px;
+    font-size: 14px;
   }
  
   .hero {
@@ -676,7 +727,39 @@
   }
  
   .nav-container {
-    min-height: 74px;
+    min-height: auto;
+    padding: 10px 0 12px;
+    row-gap: 10px;
+  }
+
+  .logo-mark {
+    width: 46px;
+    height: 46px;
+  }
+
+  .logo-title {
+    font-size: clamp(18px, 6vw, 24px);
+    line-height: 1.08;
+  }
+
+  .nav-contacts {
+    gap: 6px;
+  }
+
+  .nav-contact-link {
+    width: 28px;
+    height: 28px;
+  }
+
+  .nav-links {
+    padding: 5px;
+    border-radius: 10px;
+  }
+
+  .nav-links a {
+    min-height: 34px;
+    padding: 0 4px;
+    font-size: 13px;
   }
  
   .quote-btn {

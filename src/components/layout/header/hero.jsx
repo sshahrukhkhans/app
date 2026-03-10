@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import bannerTwo from "../../../assets/images/h3-banner2.png";
 import shapeOne from "../../../assets/images/h3-shape1.png";
  
@@ -31,8 +32,8 @@ const Hero = () => {
             Standards-aligned planning, workpapers, and substantive testing delivered by a secure India-based team that fits US firm workflows.
           </p>
           <div className="hero-buttons">
-            <button className="primary">Learn More</button>
-            <button className="secondary">Get Service</button>
+            <Link to="/about-us" className="primary">Learn More</Link>
+            <Link to="/contact-us" className="secondary">Get Service</Link>
           </div>
         </div>
       </div>

@@ -137,7 +137,7 @@ const AboutPage = () => {
       <Topbar />
       <Navbar />
 
-      <section className="about-page-hero" aria-label="About us banner">
+      <section id="about-top" className="about-page-hero" aria-label="About us banner">
         <img src={serviceBanner} alt="About us banner" loading="lazy" />
         <div className="about-page-hero-overlay">
           <div className="container">
@@ -170,12 +170,10 @@ const AboutPage = () => {
               accounting firms and finance teams operating across global
               reporting environments. We support planning, documentation,
               testing, controls, and final review workflows with delivery
-              discipline.
-            </p>
-            <p>
-              Our teams align to client processes and reviewer expectations so
-              engagements move faster with consistent quality. We focus on
-              practical execution, clear communication, and dependable outcomes.
+              discipline. Our teams align to client processes and reviewer
+              expectations so engagements move faster with consistent quality.
+              We focus on practical execution, clear communication, and
+              dependable outcomes.
             </p>
           </article>
         </div>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./why-choose-us.css";
 import bannerMain from "../../../assets/images/h3-banner-main.png";
 
@@ -68,9 +69,9 @@ const WhyChooseUsSection = () => {
             </div>
 
             <div className="why-actions">
-              <a href="/" className="why-btn-primary">
+              <Link to="/about-us" className="why-btn-primary">
                 Learn More
-              </a>
+              </Link>
             </div>
           </div>
 

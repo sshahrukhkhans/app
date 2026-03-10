@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./invest-cta.css";
 
 const InvestCtaSection = () => {
@@ -21,9 +22,9 @@ const InvestCtaSection = () => {
               team anywhere in the world with reliable, high-quality audit and
               reporting services.
             </p>
-            <a href="/" className="invest-cta-btn">
+            <Link to="/contact-us" className="invest-cta-btn">
               Connect With Us
-            </a>
+            </Link>
           </div>
         </div>
       </div>

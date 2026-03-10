@@ -39,7 +39,7 @@ const ContactPage = () => {
       <Topbar />
       <Navbar />
 
-      <section className="contact-page-hero" aria-label="Contact us banner">
+      <section id="contact-top" className="contact-page-hero" aria-label="Contact us banner">
         <img src={serviceBanner} alt="Contact us banner" loading="lazy" />
         <div className="contact-page-hero-overlay">
           <div className="container">

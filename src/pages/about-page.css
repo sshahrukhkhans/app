@@ -5,11 +5,9 @@
 
 .about-page-hero img {
   width: 100%;
-  height: 46vh;
-  min-height: 260px;
-  max-height: 440px;
+  height: clamp(260px, 42vh, 420px);
   object-fit: cover;
-  object-position: center;
+  object-position: center 20%;
   display: block;
 }
 
@@ -27,7 +25,7 @@
   font-size: 60px;
   font-weight: 700;
   line-height: 72.4998px;
-  color: rgb(28, 37, 57);
+  color: #003b7f;
 }
 
 .about-page-breadcrumb {
@@ -38,11 +36,11 @@
   font-size: 20px;
   font-weight: 600;
   line-height: 31.1112px;
-  color: rgb(28, 37, 57);
+  color: #003b7f;
 }
 
 .about-page-breadcrumb a {
-  color: rgb(28, 37, 57);
+  color: #003b7f;
   transition: color 0.2s ease;
 }
 
@@ -111,6 +109,8 @@
   font-weight: 400;
   line-height: 28.0001px;
   color: rgb(93, 102, 111);
+  text-align: justify;
+  text-align-last: left;
 }
 
 .about-page-copy p + p {
@@ -124,9 +124,12 @@
 }
 
 .about-page-next-image img {
-  width: min(100%, 1100px);
+  width: min(100%, 900px);
+  max-height: 420px;
+  height: auto;
   display: block;
   border-radius: 0;
+  object-fit: cover;
 }
 
 .about-cta-visual {
@@ -490,6 +493,10 @@
   .about-page-grid {
     grid-template-columns: 1fr;
     gap: 28px;
+  }
+
+  .about-page-copy p {
+    text-align: left;
   }
 
   .about-page-hero h1 {

@@ -1,8 +1,5 @@
 import { Link } from "react-router-dom";
 import logoCnr from "../../../assets/images/logo-cnr.webp";
-import instagramIcon from "../../../assets/images/Instagram.png";
-import facebookIcon from "../../../assets/images/Facebook.png";
-import xIcon from "../../../assets/images/twitter.jpg";
 
 const Navbar = () => {
   return (
@@ -19,15 +16,17 @@ const Navbar = () => {
           <li><Link to="/about-us">About Us</Link></li>
           <li><Link to="/contact-us">Contact Us</Link></li>
         </ul>
-        <div className="nav-socials">
-          <a className="nav-social-link" href="/" aria-label="Instagram">
-            <img src={instagramIcon} alt="" />
+        <div className="nav-contacts">
+          <a className="nav-contact-link" href="tel:+919876543210" aria-label="Call us">
+            <svg className="nav-contact-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 4h3l1.2 4-1.8 1.8a14 14 0 0 0 5.8 5.8L16 14l4 1.2v3a2 2 0 0 1-2.1 2A16.9 16.9 0 0 1 4 6.1 2 2 0 0 1 6 4Z" />
+            </svg>
           </a>
-          <a className="nav-social-link" href="/" aria-label="Facebook">
-            <img src={facebookIcon} alt="" />
-          </a>
-          <a className="nav-social-link" href="/" aria-label="X">
-            <img src={xIcon} alt="" />
+          <a className="nav-contact-link" href="mailto:info@cnrintelligrow.com" aria-label="Email us">
+            <svg className="nav-contact-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 6h16v12H4z" />
+              <path d="m4 7 8 6 8-6" />
+            </svg>
           </a>
         </div>
       </div>

@@ -24,6 +24,10 @@ function App() {
   }, [location, displayLocation]);
 
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [location.pathname]);
+
+  useEffect(() => {
     const sections = document.querySelectorAll(".app-sections > *");
     const observer = new IntersectionObserver(
       (entries) => {
