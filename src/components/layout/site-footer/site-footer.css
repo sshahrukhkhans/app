@@ -14,7 +14,7 @@
 .site-footer-col h4 {
   margin: 0 0 20px;
   font-family: "red hat display", sans-serif;
-  font-size: 24px;
+  font-size: 23px;
   font-weight: 700;
   line-height: 28.9999px;
   color: rgb(255, 255, 255);
@@ -24,6 +24,10 @@
 .site-footer-wrap > .site-footer-col:nth-child(2),
 .site-footer-wrap > .site-footer-col:nth-child(3) {
   text-align: center;
+}
+
+.site-footer-wrap > .site-footer-col:nth-child(3) {
+  margin-left: 12px;
 }
 
 .site-footer-col p {
@@ -166,6 +170,10 @@
 
   .site-footer-wrap > .site-footer-col:last-child {
     margin-right: 0;
+  }
+
+  .site-footer-wrap > .site-footer-col:nth-child(3) {
+    margin-left: 0;
   }
 
   .site-footer-bottom p:first-child {

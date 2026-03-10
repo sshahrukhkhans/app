@@ -1,3 +1,6 @@
+import { useEffect, useMemo, useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./testimonial.css";
 import profileImage from "../../../assets/images/profile.jpg";
 
@@ -31,12 +34,97 @@ const partnerLogos = [
   { name: "Investapp", tag: "APPLICATION" },
 ];
 
+gsap.registerPlugin(ScrollTrigger);
+
 const TestimonialSection = () => {
+  const sectionRef = useRef(null);
+  const headerRef = useRef(null);
+  const cardsRef = useRef(null);
+  const [startIndex, setStartIndex] = useState(0);
+  const isAnimatingRef = useRef(false);
+
+  const visibleTestimonials = useMemo(
+    () =>
+      Array.from({ length: 3 }, (_, offset) => {
+        const index = (startIndex + offset) % testimonials.length;
+        return testimonials[index];
+      }),
+    [startIndex]
+  );
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const header = headerRef.current;
+    if (!section || !header) return undefined;
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: "top 84%",
+        once: true,
+      },
+    });
+
+    tl.fromTo(
+      header,
+      { opacity: 0, y: 36 },
+      { opacity: 1, y: 0, duration: 0.72, ease: "power2.out" }
+    );
+
+    return () => {
+      tl.kill();
+    };
+  }, []);
+
+  useEffect(() => {
+    const cardsWrap = cardsRef.current;
+    if (!cardsWrap) return undefined;
+
+    const cards = cardsWrap.querySelectorAll(".testimonial-item");
+    gsap.fromTo(
+      cards,
+      { opacity: 0, y: 80 },
+      { opacity: 1, y: 0, duration: 0.62, ease: "power2.out", stagger: 0.12, clearProps: "opacity,transform" }
+    );
+
+    const intervalId = window.setInterval(() => {
+      if (isAnimatingRef.current) return;
+      isAnimatingRef.current = true;
+
+      const outgoingCards = cardsWrap.querySelectorAll(".testimonial-item");
+      const nextIndex = (startIndex + 1) % testimonials.length;
+
+      const changeTl = gsap.timeline({
+        onComplete: () => {
+          setStartIndex(nextIndex);
+          isAnimatingRef.current = false;
+        },
+      });
+
+      changeTl
+        .to(
+          outgoingCards,
+          {
+            opacity: 0,
+            y: -28,
+            duration: 0.36,
+            ease: "power2.in",
+            stagger: 0.08,
+          },
+          0
+        );
+    }, 4200);
+
+    return () => {
+      window.clearInterval(intervalId);
+    };
+  }, [startIndex]);
+
   return (
-    <section className="testimonial-section">
+    <section className="testimonial-section" ref={sectionRef}>
       <div className="container testimonial-wrap">
         <div className="testimonial-top">
-          <header className="testimonial-header">
+          <header className="testimonial-header" ref={headerRef}>
             <div className="testimonial-kicker-wrap">
               <span className="testimonial-kicker-line" />
               <span className="testimonial-kicker">TESTIMONIAL</span>
@@ -49,8 +137,8 @@ const TestimonialSection = () => {
           </header>
 
           <div className="testimonial-cards-wrap">
-            <div className="testimonial-cards">
-              {testimonials.map((item) => (
+            <div className="testimonial-cards" ref={cardsRef}>
+              {visibleTestimonials.map((item) => (
                 <div key={item.name} className="testimonial-item">
                   <article className="testimonial-card">
                     <div className="testimonial-stars">★★★★★</div>
@@ -70,9 +158,9 @@ const TestimonialSection = () => {
             </div>
 
             <div className="testimonial-dots" aria-hidden="true">
-              <span className="is-active" />
-              <span />
-              <span />
+              {testimonials.map((item, index) => (
+                <span key={item.name} className={index === startIndex ? "is-active" : ""} />
+              ))}
             </div>
           </div>
         </div>

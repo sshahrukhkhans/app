@@ -1,4 +1,6 @@
 .why-section {
+  --why-parallax: 0px;
+  --why-parallax-soft: 0px;
   position: relative;
   background:
     repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.09) 0 2px, transparent 2px 12px),
@@ -42,6 +44,9 @@
   padding: 10px 6px 28px;
   backdrop-filter: none;
   margin-left: 40px;
+  transform: translate3d(0, calc(var(--why-parallax-soft) * -1), 0);
+  transition: transform 0.22s linear;
+  will-change: transform;
 }
 
 .why-kicker-wrap {
@@ -170,6 +175,9 @@
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
+  transform: translate3d(0, var(--why-parallax-soft), 0);
+  transition: transform 0.22s linear;
+  will-change: transform;
 }
 
 .why-team {
@@ -177,6 +185,9 @@
   height: auto;
   position: relative;
   z-index: 4;
+  transform: translate3d(0, var(--why-parallax), 0);
+  transition: transform 0.22s linear;
+  will-change: transform;
 }
 
 @media (max-width: 1180px) {
@@ -198,6 +209,13 @@
 
   .why-team {
     width: min(100%, 640px);
+  }
+
+  .why-content,
+  .why-media,
+  .why-team {
+    transform: none;
+    transition: none;
   }
 }
 
@@ -539,6 +557,13 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .why-content,
+  .why-media,
+  .why-team {
+    transform: none !important;
+    transition: none !important;
+  }
+
   .why-team-banner,
   .why-chart-banner {
     animation: none;

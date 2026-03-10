@@ -65,6 +65,7 @@ const StatIcon = ({ type }) => {
 const ProcessSection = () => {
   const sectionRef = useRef(null);
   const [startCount, setStartCount] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const projectCount = useCountUp(1500, 1, startCount);
   const awardCount = useCountUp(45, 1, startCount);
 
@@ -76,6 +77,7 @@ const ProcessSection = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setStartCount(true);
+          setIsVisible(true);
           observer.disconnect();
         }
       },
@@ -87,7 +89,7 @@ const ProcessSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="process-section">
+    <section ref={sectionRef} className={`process-section${isVisible ? " is-visible" : ""}`}>
       <div className="container">
         <header className="process-header">
           <div className="process-kicker-wrap">

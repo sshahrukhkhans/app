@@ -1,6 +1,9 @@
 .testimonial-section {
-  background: #edf1f7;
+  --testimonial-bg-a: #dce9fb;
+  --testimonial-bg-b: #c9dbf6;
+  background: linear-gradient(180deg, var(--testimonial-bg-a), var(--testimonial-bg-b));
   padding: 46px 0 42px;
+  transition: background 0.5s ease;
 }
 
 .testimonial-wrap {
@@ -77,6 +80,7 @@
   grid-template-rows: 1fr auto;
   gap: 22px;
   height: 100%;
+  will-change: transform, opacity;
 }
 
 .testimonial-card {

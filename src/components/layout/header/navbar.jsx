@@ -12,8 +12,8 @@ const Navbar = () => {
           </span>
         </Link>
         <ul className="nav-links">
-          <li><Link to="/services">Services</Link></li>
           <li><Link to="/about-us">About Us</Link></li>
+          <li><Link to="/services">Services</Link></li>
           <li><Link to="/contact-us">Contact Us</Link></li>
         </ul>
         <div className="nav-contacts">

@@ -1,9 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import "../components/layout/header/header.css";
 import "./about-page.css";
-import Topbar from "../components/layout/header/topbar";
-import Navbar from "../components/layout/header/navbar";
+import Header from "../components/layout/header/header";
 import SiteFooterSection from "../components/layout/site-footer/site-footer";
 import serviceBanner from "../assets/images/banner.jpg";
 import aboutBanner from "../assets/images/about-banner.jpg";
@@ -100,26 +98,6 @@ const AboutPage = () => {
   }, []);
 
   useEffect(() => {
-    const revealSections = document.querySelectorAll(
-      ".about-page-main, .about-cta-visual, .about-team-section, .about-stats-strip, .about-testimonial-section"
-    );
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-inview");
-          }
-        });
-      },
-      { threshold: 0.12 }
-    );
-
-    revealSections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
     const intervalId = setInterval(() => {
       setTestimonialIndex((prev) => (prev + 1) % testimonials.length);
     }, 3000);
@@ -134,8 +112,7 @@ const AboutPage = () => {
 
   return (
     <div className="app-sections">
-      <Topbar />
-      <Navbar />
+      <Header showHero={false} />
 
       <section id="about-top" className="about-page-hero" aria-label="About us banner">
         <img src={serviceBanner} alt="About us banner" loading="lazy" />

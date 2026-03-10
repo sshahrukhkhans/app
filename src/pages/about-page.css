@@ -53,25 +53,6 @@
   padding: 64px 0 78px;
 }
 
-.about-page-main,
-.about-cta-visual,
-.about-team-section,
-.about-stats-strip,
-.about-testimonial-section {
-  opacity: 0;
-  transform: translateY(34px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
-}
-
-.about-page-main.is-inview,
-.about-cta-visual.is-inview,
-.about-team-section.is-inview,
-.about-stats-strip.is-inview,
-.about-testimonial-section.is-inview {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .about-page-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -576,17 +557,5 @@
 
   .about-team-meta p {
     font-size: 16px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .about-page-main,
-  .about-cta-visual,
-  .about-team-section,
-  .about-stats-strip,
-  .about-testimonial-section {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
   }
 }

@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
-import "../components/layout/header/header.css";
 import "./contact-page.css";
-import Topbar from "../components/layout/header/topbar";
-import Navbar from "../components/layout/header/navbar";
+import Header from "../components/layout/header/header";
 import SiteFooterSection from "../components/layout/site-footer/site-footer";
 import serviceBanner from "../assets/images/banner.jpg";
 import project01 from "../assets/images/project-01.jpg";
@@ -36,8 +34,7 @@ const contactCards = [
 const ContactPage = () => {
   return (
     <div className="app-sections">
-      <Topbar />
-      <Navbar />
+      <Header showHero={false} />
 
       <section id="contact-top" className="contact-page-hero" aria-label="Contact us banner">
         <img src={serviceBanner} alt="Contact us banner" loading="lazy" />

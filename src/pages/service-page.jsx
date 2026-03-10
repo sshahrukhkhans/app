@@ -1,9 +1,7 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import "../components/layout/header/header.css";
 import "./service-page.css";
-import Topbar from "../components/layout/header/topbar";
-import Navbar from "../components/layout/header/navbar";
+import Header from "../components/layout/header/header";
 import SiteFooterSection from "../components/layout/site-footer/site-footer";
 import serviceBanner from "../assets/images/banner.jpg";
 
@@ -14,6 +12,51 @@ const serviceItems = [
   "Specialized Support Services",
   "Industry Expertise & Project Management",
   "Compliance, Security & Ethical Standards",
+];
+
+const industryCards = [
+  {
+    id: "01",
+    title: "Manufacturing & Trading",
+    description:
+      "Inventory valuation, costing controls, and revenue recognition across multi-location operations.",
+  },
+  {
+    id: "02",
+    title: "Healthcare",
+    description:
+      "Billing integrity, compliance considerations, and operational ratio analysis.",
+  },
+  {
+    id: "03",
+    title: "Real Estate & Property",
+    description:
+      "Property-level performance testing, compliance checks, and lease analytics.",
+  },
+  {
+    id: "04",
+    title: "Not-For-Profit",
+    description:
+      "Fund accounting workflows, restricted grants, and transparency-focused reporting.",
+  },
+  {
+    id: "05",
+    title: "IT & SaaS",
+    description:
+      "Subscription revenue, ASC 606 compliance, and deferred revenue analytics.",
+  },
+  {
+    id: "06",
+    title: "Retail & E-commerce",
+    description:
+      "High-volume transaction testing, return reserves, and gross margin controls.",
+  },
+  {
+    id: "07",
+    title: "Hospitality & Leisure",
+    description:
+      "Seasonality analytics, occupancy metrics, and operating expense controls.",
+  },
 ];
 
 const ServiceIcon = () => (
@@ -31,11 +74,44 @@ const ServiceIcon = () => (
 
 const ServicePage = () => {
   const [hoveredService, setHoveredService] = useState("");
+  const [slideIndex, setSlideIndex] = useState(0);
+  const [cardsPerView, setCardsPerView] = useState(3);
+
+  useEffect(() => {
+    const updateCardsPerView = () => {
+      if (window.innerWidth >= 900) {
+        setCardsPerView(3);
+      } else if (window.innerWidth >= 640) {
+        setCardsPerView(2);
+      } else {
+        setCardsPerView(1);
+      }
+    };
+
+    updateCardsPerView();
+    window.addEventListener("resize", updateCardsPerView);
+    return () => window.removeEventListener("resize", updateCardsPerView);
+  }, []);
+
+  useEffect(() => {
+    const intervalId = window.setInterval(() => {
+      setSlideIndex((prev) => (prev + 1) % industryCards.length);
+    }, 4200);
+
+    return () => {
+      window.clearInterval(intervalId);
+    };
+  }, []);
+
+  const visibleIndustryCards = useMemo(() => {
+    return Array.from({ length: cardsPerView }, (_, offset) => {
+      return industryCards[(slideIndex + offset) % industryCards.length];
+    });
+  }, [cardsPerView, slideIndex]);
 
   return (
     <div className="app-sections">
-      <Topbar />
-      <Navbar />
+      <Header showHero={false} />
       <section className="service-page-banner" aria-label="Service banner">
         <img src={serviceBanner} alt="Service banner" loading="lazy" />
         <div className="service-page-banner-content">
@@ -362,6 +438,80 @@ const ServicePage = () => {
           </article>
         </div>
       </section>
+
+      <section className="service-industry-section" aria-label="Industry expertise">
+        <div className="container service-industry-layout">
+          <div className="service-industry-intro">
+            <p className="service-industry-kicker">INDUSTRY EXPERTISE</p>
+            <h2>
+              Our delivery model adapts to industry-specific risk areas,
+              transaction patterns, and reporting issues
+              <br className="service-industry-intro-break" />
+              so support remains relevant across sectors with different audit
+              priorities.
+            </h2>
+            <span className="service-industry-divider" aria-hidden="true" />
+          </div>
+
+          <div className="service-industry-slider">
+            <div
+              className="service-industry-row"
+              style={{
+                "--cards-per-view": cardsPerView,
+              }}
+              key={`${cardsPerView}-${slideIndex}`}
+            >
+              {visibleIndustryCards.map((item) => (
+                <article key={item.id} className="service-industry-card">
+                  <div className="service-industry-card-body">
+                    <div className="service-industry-card-head">
+                      <p className="service-industry-rating">
+                        <strong>{item.id}</strong>
+                      </p>
+                      <span className="service-industry-icon" aria-hidden="true">
+                        <ServiceIcon />
+                      </span>
+                    </div>
+                    <div className="service-industry-title-wrap">
+                      <h3>{item.title}</h3>
+                    </div>
+                    <p className="service-industry-quote">{item.description}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <div className="service-industry-dots" aria-hidden="true">
+              {industryCards.map((item, index) => (
+                <span
+                  key={item.id}
+                  className={index === slideIndex % industryCards.length ? "is-active" : ""}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="service-drop-line-section" aria-label="Drop us a line">
+        <div className="container service-drop-line-wrap">
+          <div className="service-drop-line-header">
+            <h2>Drop Us A Line</h2>
+            <p>Our team will arrange your first business consultation at no cost.</p>
+            <span className="service-drop-line-divider" aria-hidden="true" />
+          </div>
+
+          <form className="service-drop-line-grid">
+            <input type="text" placeholder="Name*" />
+            <input type="text" placeholder="Phone No*" />
+            <input type="email" placeholder="E-mail*" />
+            <input type="text" placeholder="Subject*" />
+            <textarea placeholder="Message*" rows={6} />
+            <button type="button">Send Mail</button>
+          </form>
+        </div>
+      </section>
+
       <SiteFooterSection />
     </div>
   );

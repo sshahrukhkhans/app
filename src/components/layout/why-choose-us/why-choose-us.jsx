@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./why-choose-us.css";
 import bannerMain from "../../../assets/images/h3-banner-main.png";
@@ -42,8 +43,45 @@ const ReasonIcon = ({ type }) => {
 };
 
 const WhyChooseUsSection = () => {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return undefined;
+
+    let rafId = 0;
+
+    const updateParallax = () => {
+      rafId = 0;
+      const rect = section.getBoundingClientRect();
+      const viewportHeight = window.innerHeight || 1;
+      const progress = (viewportHeight - rect.top) / (viewportHeight + rect.height);
+      const clampedProgress = Math.min(Math.max(progress, 0), 1);
+      const shift = (clampedProgress - 0.5) * 36;
+
+      section.style.setProperty("--why-parallax", `${shift.toFixed(2)}px`);
+      section.style.setProperty("--why-parallax-soft", `${(shift * 0.55).toFixed(2)}px`);
+    };
+
+    const onScroll = () => {
+      if (!rafId) {
+        rafId = window.requestAnimationFrame(updateParallax);
+      }
+    };
+
+    updateParallax();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+
+    return () => {
+      if (rafId) window.cancelAnimationFrame(rafId);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
+
   return (
-    <section className="why-section">
+    <section ref={sectionRef} className="why-section">
       <div className="container why-layout">
         <div className="why-panel">
           <div className="why-content">
