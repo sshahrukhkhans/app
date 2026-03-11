@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./case-studies.css";
 import project01 from "../../../assets/images/project-01.jpg";
 import project02 from "../../../assets/images/project-02.jpg";
@@ -33,6 +34,11 @@ const cases = [
     image: project06,
   },
 ];
+
+const serviceRouteMap = {
+  Compliance: "Compliance, Security & Ethical Standards",
+  "Security & Ethical Standards": "Compliance, Security & Ethical Standards",
+};
  
 const CaseStudiesSection = () => {
   const [start, setStart] = useState(0);
@@ -78,7 +84,12 @@ const CaseStudiesSection = () => {
             }}
           >
             {cases.map((item) => (
-              <article className="case-card" key={item.title}>
+              <Link
+                className="case-card case-card-link"
+                key={item.title}
+                to={`/services?service=${encodeURIComponent(serviceRouteMap[item.title] || item.title)}`}
+                aria-label={`Open ${item.title} details`}
+              >
                 <img
                   src={item.image}
                   alt={item.title}
@@ -87,9 +98,8 @@ const CaseStudiesSection = () => {
                 <div className="case-card-caption">
                   <h3>{item.title}</h3>
                   <span className="case-card-corner" aria-hidden="true" />
-                  <span className="case-card-action" aria-hidden="true">↗</span>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </div>

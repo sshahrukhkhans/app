@@ -191,12 +191,6 @@
   height: 22px;
 }
 
-.service-link-arrow {
-  color: #5d6677;
-  font-size: 28px;
-  line-height: 1;
-}
-
 .service-link-item:hover {
   background: rgba(255, 255, 255, 0.28);
   border-color: #2e77e8;
@@ -219,9 +213,7 @@
   transform: translateX(120%);
 }
 
-.service-link-item:hover .service-link-arrow,
 .service-link-item:hover .service-link-icon,
-.service-link-item.is-reveal-active .service-link-arrow,
 .service-link-item.is-reveal-active .service-link-icon {
   color: rgb(56, 201, 247);
 }
@@ -1041,10 +1033,6 @@
   .service-link-icon svg {
     width: 18px;
     height: 18px;
-  }
-
-  .service-link-arrow {
-    font-size: 1.25rem;
   }
 
   .service-reveal-grid {

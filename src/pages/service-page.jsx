@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./service-page.css";
 import Header from "../components/layout/header/header";
 import SiteFooterSection from "../components/layout/site-footer/site-footer";
@@ -73,6 +73,7 @@ const ServiceIcon = () => (
 );
 
 const ServicePage = () => {
+  const location = useLocation();
   const [hoveredService, setHoveredService] = useState("");
   const [selectedService, setSelectedService] = useState("");
   const [slideIndex, setSlideIndex] = useState(0);
@@ -104,6 +105,22 @@ const ServicePage = () => {
       window.clearInterval(intervalId);
     };
   }, []);
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const requestedService = params.get("service");
+    if (!requestedService) return;
+
+    if (!serviceItems.includes(requestedService)) return;
+
+    setHoveredService("");
+    setSelectedService(requestedService);
+
+    const section = document.querySelector(".service-main");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [location.search]);
 
   useEffect(() => {
     const handleDocumentClick = (event) => {
@@ -165,7 +182,6 @@ const ServicePage = () => {
                   </span>
                   <span>{item}</span>
                 </span>
-                <span className="service-link-arrow">&rsaquo;</span>
               </button>
             ))}
           </aside>

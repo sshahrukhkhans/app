@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import logoFooter from "../../../assets/images/footer_logo.png";
 
 const Navbar = () => {
@@ -44,9 +44,36 @@ const Navbar = () => {
         </button>
 
         <ul id="site-nav-links" className={`nav-links${isMenuOpen ? " is-open" : ""}`}>
-          <li><Link to="/about-us" onClick={closeMenu}>About Us</Link></li>
-          <li><Link to="/services" onClick={closeMenu}>Services</Link></li>
-          <li><Link to="/contact-us" onClick={closeMenu}>Contact Us</Link></li>
+          <li>
+            <NavLink
+              to="/about-us"
+              end
+              className={({ isActive }) => (isActive ? "is-active" : "")}
+              onClick={closeMenu}
+            >
+              About Us
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/services"
+              end
+              className={({ isActive }) => (isActive ? "is-active" : "")}
+              onClick={closeMenu}
+            >
+              Services
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/contact-us"
+              end
+              className={({ isActive }) => (isActive ? "is-active" : "")}
+              onClick={closeMenu}
+            >
+              Contact Us
+            </NavLink>
+          </li>
         </ul>
 
         <div className="nav-contacts">
