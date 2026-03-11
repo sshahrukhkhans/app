@@ -1,62 +1,10 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./latest-news.css";
-import project01 from "../../../assets/images/project-01.jpg";
-import project02 from "../../../assets/images/project-02.jpg";
-import project03 from "../../../assets/images/project-03.jpg";
-import project04 from "../../../assets/images/project-04.jpg";
-
-const newsItems = [
-  {
-    image: project01,
-    date: "MARCH 11, 2023",
-    title: "How consultation in business is affecting new ventures",
-    excerpt: "We denounce with righteous indignation and dislike men who are so beguiled...",
-  },
-  {
-    image: project02,
-    date: "MARCH 11, 2023",
-    title: "Challanges of consulting new Business Firms",
-    excerpt: "We denounce with righteous indignation and dislike men who are so beguiled...",
-  },
-  {
-    image: project03,
-    date: "MARCH 11, 2023",
-    title: "Revitalising your people in to a retail downturn",
-    excerpt: "We denounce with righteous indignation and dislike men who are so beguiled...",
-  },
-  {
-    image: project04,
-    date: "MARCH 11, 2023",
-    title: "Smart audit planning for high-growth service teams",
-    excerpt: "We denounce with righteous indignation and dislike men who are so beguiled...",
-  },
-  {
-    image: project01,
-    date: "APRIL 02, 2023",
-    title: "Why risk-focused reviews improve financial confidence",
-    excerpt: "We denounce with righteous indignation and dislike men who are so beguiled...",
-  },
-  {
-    image: project02,
-    date: "APRIL 18, 2023",
-    title: "Operational checks that reduce audit cycle delays",
-    excerpt: "We denounce with righteous indignation and dislike men who are so beguiled...",
-  },
-  {
-    image: project03,
-    date: "MAY 05, 2023",
-    title: "Building scalable review workflows for growing teams",
-    excerpt: "We denounce with righteous indignation and dislike men who are so beguiled...",
-  },
-  {
-    image: project04,
-    date: "MAY 21, 2023",
-    title: "Better documentation habits for stronger engagements",
-    excerpt: "We denounce with righteous indignation and dislike men who are so beguiled...",
-  },
-];
+import { latestNewsCards } from "../../../data/news-articles";
 
 const LatestNewsSection = () => {
+  const newsItems = latestNewsCards;
   const [start, setStart] = useState(0);
   const [visibleCount, setVisibleCount] = useState(4);
   const maxStart = Math.max(0, newsItems.length - visibleCount);
@@ -126,7 +74,7 @@ const LatestNewsSection = () => {
               }}
             >
               {newsItems.map((item) => (
-                <article className="latest-news-card" key={item.title}>
+                <article className="latest-news-card" key={item.slug}>
                   <div className="latest-news-image-wrap">
                     <img src={item.image} alt={item.title} loading="lazy" />
                     <span className="latest-news-date">{item.date}</span>
@@ -135,7 +83,7 @@ const LatestNewsSection = () => {
                   <div className="latest-news-body">
                     <h4>{item.title}</h4>
                     <p>{item.excerpt}</p>
-                    <a href="/">READ ARTICLE +</a>
+                    <Link to={`/news/${item.slug}`}>READ ARTICLE +</Link>
                   </div>
                 </article>
               ))}

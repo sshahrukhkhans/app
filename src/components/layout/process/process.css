@@ -35,7 +35,7 @@
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(260px, 0.75fr) minmax(340px, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 560px);
   gap: 32px;
   align-items: center;
 }
@@ -55,6 +55,7 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 26px;
+  width: 100%;
   justify-self: start;
   margin-left: 0;
 }
@@ -191,19 +192,20 @@
   margin: 0;
   text-align: center;
   font-family: "red hat display", sans-serif;
-  font-size: 40px;
+  font-size: clamp(2.15rem, 3.6vw, 40px);
   font-weight: 500;
-  line-height: 48px;
+  line-height: 1.18;
   color: rgb(27, 46, 89);
+  text-wrap: balance;
 }
 
 .process-stats-copy {
   margin: 0 0 8px;
   grid-column: 1 / -1;
-  width: min(92vw, 860px);
-  max-width: none;
-  justify-self: center;
-  text-align: center;
+  width: 100%;
+  max-width: 100%;
+  justify-self: stretch;
+  text-align: left;
   font-family: "nunito sans", sans-serif;
   font-size: 18px;
   font-weight: 400;
@@ -304,7 +306,7 @@
 
 @media (max-width: 1360px) and (min-width: 1201px) {
   .process-layout {
-    grid-template-columns: minmax(240px, 0.8fr) minmax(300px, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 500px);
     gap: 26px;
   }
 
@@ -312,9 +314,13 @@
     width: min(100%, 560px);
   }
 
-  .process-header h2 {
-    font-size: 40px;
-    line-height: 1.18;
+  .process-stats-copy {
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  .process-stats-copy br {
+    display: none;
   }
 }
 
@@ -435,6 +441,10 @@
     text-align: center;
     font-size: 16px;
     line-height: 26px;
+  }
+
+  .process-stats-copy br {
+    display: none;
   }
 
   .process-point p {

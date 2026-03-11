@@ -103,7 +103,6 @@ const ProcessSection = () => {
           <div className="process-stats" aria-label="Key achievements">
             <p className="process-stats-copy">
               We extend beyond core audit execution into tax support, regulatory documentation,
-              <br />
               and completion-stage review support where technical consistency matters most.
             </p>
             {processStats.map((item, index) => (

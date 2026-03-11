@@ -7,7 +7,6 @@ html{
   max-width: 100%;
   overflow-x: hidden;
   overflow-x: clip;
-  overflow-y: auto;
 }
 :root{
   font-family: sans-serif;
@@ -22,7 +21,6 @@ body{
   background: #ffffff;
   overflow-x: hidden;
   overflow-x: clip;
-  overflow-y: auto;
 }
 
 a{
@@ -152,38 +150,8 @@ section,
 
 .page-route-transition {
   width: 100%;
-  background: #ffffff;
+  background: transparent;
   overflow-x: clip;
-}
-
-.page-route-transition.fade-in {
-  animation: pageFadeIn 1ms linear both;
-}
-
-.page-route-transition.fade-out {
-  animation: pageFadeOut 1ms linear both;
-}
-
-@keyframes pageFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes pageFadeOut {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
 }
 
 .scroll-section{
@@ -227,7 +195,7 @@ section,
 .home-page .services-intro h2,
 .home-page .case-header h2,
 .home-page .why-content h2,
-.home-page .process-content h2,
+.home-page .process-header h2,
 .home-page .growth-content h2,
 .home-page .testimonial-header h2,
 .home-page .latest-news-header h2,
@@ -253,6 +221,26 @@ section,
   font-size: 22px;
   font-weight: 500;
   line-height: 1.4;
+}
+
+.home-page .latest-news-card {
+  min-height: 34rem;
+}
+
+.home-page .latest-news-body h4 {
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  height: auto;
+  max-height: none;
+  min-height: calc(1.4em * 3);
+}
+
+.home-page .latest-news-body p {
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  height: auto;
+  max-height: none;
+  min-height: calc(1.75em * 4);
 }
 
 .home-page .hero p,
@@ -311,7 +299,7 @@ section,
   .home-page .services-intro h2,
   .home-page .case-header h2,
   .home-page .why-content h2,
-  .home-page .process-content h2,
+.home-page .process-header h2,
   .home-page .growth-content h2,
   .home-page .testimonial-header h2,
   .home-page .latest-news-header h2,
@@ -327,6 +315,10 @@ section,
   .home-page .latest-news-body h4,
   .home-page .testimonial-person h3 {
     font-size: 20px;
+  }
+
+  .home-page .latest-news-card {
+    min-height: 32rem;
   }
 
   .home-page .hero p,
@@ -357,7 +349,7 @@ section,
   .home-page .services-intro h2,
   .home-page .case-header h2,
   .home-page .why-content h2,
-  .home-page .process-content h2,
+.home-page .process-header h2,
   .home-page .growth-content h2,
   .home-page .testimonial-header h2,
   .home-page .latest-news-header h2,
@@ -373,6 +365,10 @@ section,
   .home-page .latest-news-body h4,
   .home-page .testimonial-person h3 {
     font-size: 18px;
+  }
+
+  .home-page .latest-news-card {
+    min-height: 30rem;
   }
 
   .home-page .hero p,
@@ -420,7 +416,7 @@ section,
   .home-page .services-intro h2,
   .home-page .case-header h2,
   .home-page .why-content h2,
-  .home-page .process-content h2,
+.home-page .process-header h2,
   .home-page .growth-content h2,
   .home-page .testimonial-header h2,
   .home-page .latest-news-header h2,
@@ -436,6 +432,22 @@ section,
   .home-page .latest-news-body h4,
   .home-page .testimonial-person h3 {
     font-size: 16px;
+  }
+
+  .home-page .latest-news-card {
+    min-height: auto;
+  }
+
+  .home-page .latest-news-body h4 {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    min-height: calc(1.4em * 2);
+  }
+
+  .home-page .latest-news-body p {
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    min-height: auto;
   }
 
   .home-page .hero p,
@@ -475,7 +487,7 @@ section,
   .home-page .services-intro h2,
   .home-page .case-header h2,
   .home-page .why-content h2,
-  .home-page .process-content h2,
+.home-page .process-header h2,
   .home-page .growth-content h2,
   .home-page .testimonial-header h2,
   .home-page .latest-news-header h2,
@@ -506,11 +518,6 @@ section,
 }
 
 @media (prefers-reduced-motion: reduce){
-  .page-route-transition.fade-in,
-  .page-route-transition.fade-out {
-    animation: none !important;
-  }
-
   .scroll-section{
     opacity: 1 !important;
     transform: none !important;

@@ -89,7 +89,7 @@
   justify-self: end;
   align-items: flex-end;
   text-align: right;
-  margin-right: clamp(80px, 9vw, 220px);
+  margin-right: clamp(28px, 4vw, 120px);
 }
 
 .site-footer-socials a {

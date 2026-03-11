@@ -14,21 +14,15 @@ import SiteFooterSection from "./components/layout/site-footer/site-footer";
 import ServicePage from "./pages/service-page";
 import AboutPage from "./pages/about-page";
 import ContactPage from "./pages/contact-page";
+import NewsArticlePage from "./pages/news-article-page";
+import BlogPage from "./pages/blog-page";
 
 gsap.registerPlugin(ScrollTrigger);
  
 function App() {
   const location = useLocation();
-  const [displayLocation, setDisplayLocation] = useState(location);
-  const [transitionStage, setTransitionStage] = useState("fade-in");
   const [showBootLoader, setShowBootLoader] = useState(true);
   const lenisRef = useRef(null);
-
-  useEffect(() => {
-    if (location.pathname !== displayLocation.pathname) {
-      setTransitionStage("fade-out");
-    }
-  }, [location, displayLocation]);
 
   useEffect(() => {
     let timerId;
@@ -94,7 +88,7 @@ function App() {
   useEffect(() => {
     const sections = document.querySelectorAll(".app-sections > *");
 
-    if (displayLocation.pathname !== "/") {
+    if (location.pathname !== "/") {
       sections.forEach((section) => {
         section.classList.remove("scroll-section", "is-visible");
         section.style.removeProperty("--reveal-delay");
@@ -122,10 +116,10 @@ function App() {
     });
 
     return () => observer.disconnect();
-  }, [displayLocation.pathname]);
+  }, [location.pathname]);
 
   useEffect(() => {
-    if (displayLocation.pathname !== "/") return undefined;
+    if (location.pathname !== "/") return undefined;
 
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const isSmallViewport = window.matchMedia("(max-width: 768px)").matches;
@@ -253,17 +247,17 @@ function App() {
       hoverCleanup.forEach((cleanup) => cleanup && cleanup());
       ctx.revert();
     };
-  }, [displayLocation.pathname]);
+  }, [location.pathname]);
 
   useEffect(() => {
-    if (displayLocation.pathname === "/") return undefined;
+    if (location.pathname === "/") return undefined;
 
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const isSmallViewport = window.matchMedia("(max-width: 768px)").matches;
     if (prefersReducedMotion || isSmallViewport) return undefined;
 
     const ctx = gsap.context(() => {
-      if (displayLocation.pathname === "/about-us") {
+      if (location.pathname === "/about-us") {
         gsap.fromTo(
           ".about-page-hero img",
           { scale: 1.08, autoAlpha: 0.72 },
@@ -389,7 +383,7 @@ function App() {
         });
       }
 
-      if (displayLocation.pathname === "/services") {
+      if (location.pathname === "/services") {
         gsap.fromTo(
           ".service-page-banner img",
           { scale: 1.08, autoAlpha: 0.74 },
@@ -480,7 +474,7 @@ function App() {
 
       }
 
-      if (displayLocation.pathname === "/contact-us") {
+      if (location.pathname === "/contact-us") {
         gsap.fromTo(
           ".contact-page-hero img",
           { scale: 1.06, autoAlpha: 0.78 },
@@ -558,6 +552,92 @@ function App() {
         });
       }
 
+      if (location.pathname === "/blog") {
+        gsap.fromTo(
+          ".blog-page-hero img",
+          { scale: 1.08, autoAlpha: 0.76 },
+          { scale: 1, autoAlpha: 1, duration: 0.98, ease: "power2.out", overwrite: "auto" }
+        );
+
+        gsap.fromTo(
+          ".blog-page-hero-overlay .container",
+          { autoAlpha: 0, y: 28 },
+          { autoAlpha: 1, y: 0, duration: 0.72, delay: 0.1, ease: "power2.out", overwrite: "auto" }
+        );
+
+        gsap.from(".blog-page-list-header > *", {
+          autoAlpha: 0,
+          y: 20,
+          stagger: 0.08,
+          duration: 0.56,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".blog-page-list-section",
+            start: "top 82%",
+            once: true,
+          },
+        });
+
+        gsap.from(".blog-page-card", {
+          autoAlpha: 0,
+          y: 34,
+          stagger: 0.08,
+          duration: 0.65,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".blog-page-grid",
+            start: "top 84%",
+            once: true,
+          },
+        });
+      }
+
+      if (location.pathname.startsWith("/news/")) {
+        gsap.fromTo(
+          ".news-article-hero img",
+          { scale: 1.08, autoAlpha: 0.76 },
+          { scale: 1, autoAlpha: 1, duration: 1, ease: "power2.out", overwrite: "auto" }
+        );
+
+        gsap.fromTo(
+          ".news-article-hero-copy > *",
+          { autoAlpha: 0, y: 24 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            stagger: 0.08,
+            duration: 0.64,
+            ease: "power2.out",
+            overwrite: "auto",
+          }
+        );
+
+        gsap.from(".news-article-body > *", {
+          autoAlpha: 0,
+          y: 24,
+          stagger: 0.05,
+          duration: 0.56,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".news-article-body",
+            start: "top 84%",
+            once: true,
+          },
+        });
+
+        gsap.from(".news-article-sidebar", {
+          autoAlpha: 0,
+          x: 30,
+          duration: 0.62,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".news-article-layout",
+            start: "top 84%",
+            once: true,
+          },
+        });
+      }
+
       if (document.querySelector(".site-footer-section")) {
         gsap.from(".site-footer-section", {
           autoAlpha: 0,
@@ -576,7 +656,7 @@ function App() {
     return () => {
       ctx.revert();
     };
-  }, [displayLocation.pathname]);
+  }, [location.pathname]);
 
   const HomePage = () => (
     <div className="app-sections home-page">
@@ -591,26 +671,19 @@ function App() {
     </div>
   );
 
-  const handleAnimationEnd = (event) => {
-    if (event.target !== event.currentTarget) return;
-
-    if (transitionStage === "fade-out") {
-      setDisplayLocation(location);
-      setTransitionStage("fade-in");
-    }
-  };
-
   return (
     <>
       <div className={`app-loader${showBootLoader ? " is-active" : " is-hidden"}`} aria-hidden={!showBootLoader}>
         <span className="loader loader--4" />
       </div>
-      <div className={`page-route-transition ${transitionStage}`} onAnimationEnd={handleAnimationEnd}>
-        <Routes location={displayLocation}>
+      <div className="page-route-transition">
+        <Routes location={location}>
           <Route path="/" element={<HomePage />} />
           <Route path="/services" element={<ServicePage />} />
           <Route path="/about-us" element={<AboutPage />} />
+          <Route path="/blog" element={<BlogPage />} />
           <Route path="/contact-us" element={<ContactPage />} />
+          <Route path="/news/:slug" element={<NewsArticlePage />} />
           <Route path="*" element={<HomePage />} />
         </Routes>
       </div>

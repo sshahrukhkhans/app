@@ -66,6 +66,18 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink
+              to="/blog"
+              end
+              className={({ isActive }) =>
+                isActive || location.pathname.startsWith("/news/") ? "is-active" : ""
+              }
+              onClick={closeMenu}
+            >
+              Blogs
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
               to="/contact-us"
               end
               className={({ isActive }) => (isActive ? "is-active" : "")}
