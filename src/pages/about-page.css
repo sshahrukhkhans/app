@@ -23,7 +23,7 @@
   margin: 0 0 14px;
   font-family: "red hat display", sans-serif;
   font-size: 60px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 72.4998px;
   color: #003b7f;
 }
@@ -67,20 +67,20 @@
   font-weight: 500;
   line-height: 24.889px;
   letter-spacing: 0;
-  color: rgb(56, 201, 247);
+  color: rgb(0, 59, 127);
 }
 
 .about-page-intro h2 {
   margin: 0;
   font-family: "red hat display", sans-serif;
   font-size: 48px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 57.9998px;
   color: rgb(28, 37, 57);
 }
 
 .about-page-intro h2 span {
-  color: rgb(56, 201, 247);
+  color: #0E275F;
 }
 
 .about-page-copy p {
@@ -150,13 +150,13 @@
   margin: 0;
   font-family: "red hat display", sans-serif;
   font-size: 48px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 57.9998px;
   color: rgb(255, 255, 255);
 }
 
 .about-cta-visual-content span {
-  color: rgb(56, 201, 247);
+  color: #ffffff;
 }
 
 .about-stats-strip {
@@ -197,7 +197,7 @@
   margin: 0;
   font-family: "red hat display", sans-serif;
   font-size: 72px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1;
   color: rgb(56, 201, 247);
 }
@@ -239,14 +239,14 @@
   font-weight: 500;
   line-height: 24.889px;
   letter-spacing: 0.16em;
-  color: rgb(56, 201, 247);
+  color: rgb(0, 59, 127);
 }
 
 .about-testimonial-intro h2 {
   margin: 0;
   font-family: "red hat display", sans-serif;
   font-size: 48px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 57.9998px;
   color: rgb(28, 37, 57);
 }
@@ -288,13 +288,13 @@
   margin: 0 0 14px;
   font-family: "red hat display", sans-serif;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 24.889px;
   color: rgb(28, 37, 57);
 }
 
 .about-testimonial-rating strong {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .about-testimonial-rating span {
@@ -332,7 +332,7 @@
   margin: 0;
   font-family: "red hat display", sans-serif;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 24.1666px;
   color: rgb(28, 37, 57);
 }
@@ -402,14 +402,14 @@
   font-weight: 500;
   line-height: 24.889px;
   letter-spacing: 0.24em;
-  color: rgb(56, 201, 247);
+  color: rgb(0, 59, 127);
 }
 
 .about-team-section h2 {
   margin: 0;
   font-family: "red hat display", sans-serif;
   font-size: 48px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 57.9998px;
   color: rgb(28, 37, 57);
 }
@@ -457,7 +457,7 @@
   font-family: "red hat display", sans-serif;
   font-size: 17px;
   line-height: 1.35;
-  font-weight: 700;
+  font-weight: 500;
   color: rgb(28, 37, 57);
 }
 

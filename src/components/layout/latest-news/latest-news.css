@@ -40,13 +40,13 @@
   margin: 0;
   font-family: "red hat display", sans-serif;
   font-size: 40px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 48px;
   color: rgb(27, 46, 89);
 }
 
 .latest-news-header h2 span {
-  color: #36bdf2;
+  color: #0E275F;
 }
 
 .latest-news-header p {
@@ -156,7 +156,7 @@
   margin: 0;
   font-family: "red hat display", sans-serif;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 19.3333px;
   color: rgb(39, 61, 113);
 }
@@ -182,7 +182,7 @@
   margin: 0;
   font-family: "red hat display", sans-serif;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 30px;
   color: rgb(27, 46, 89);
 }
@@ -202,7 +202,7 @@
   align-items: center;
   font-family: manrope, sans-serif;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 21.7778px;
   color: rgb(56, 201, 247);
   letter-spacing: 0;

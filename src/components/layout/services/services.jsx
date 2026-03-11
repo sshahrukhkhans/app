@@ -148,7 +148,7 @@ const ServicesSection = () => {
 
           <h2>Core Services</h2>
           <p>
-            Our team supports US CPA firms with structured planning, disciplined
+            Our team supports global CPA firms with structured planning, disciplined
             documentation, and audit-ready execution that integrates smoothly
             into established engagement workflows.
           </p>

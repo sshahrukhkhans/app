@@ -76,7 +76,7 @@
   max-width: 100%;
   font-family: "red hat display", sans-serif;
   font-size: 40px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 48px;
   color: rgb(27, 46, 89);
   white-space: normal;
@@ -114,7 +114,7 @@
   margin: 2px 0 6px;
   font-family: "red hat display", sans-serif;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 24.1666px;
   color: rgb(28, 37, 57);
 }
@@ -367,7 +367,7 @@
   display: block;
   color: #56647b;
   font-size: 9px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .why-graph-value {
@@ -375,7 +375,7 @@
   margin-top: 3px;
   color: #adb8c9;
   font-size: 9px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .why-graph-area {

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logoCnr from "../../../assets/images/logo.png";
+import logoFooter from "../../../assets/images/footer_logo.png";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,10 +27,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="container nav-container">
         <Link className="logo" to="/">
-          <img className="logo-mark" src={logoCnr} alt="CNR logo" />
-          <span className="logo-copy">
-            <span className="logo-title">CNR IntelliGrow LLP</span>
-          </span>
+          <img className="logo-mark" src={logoFooter} alt="CNR logo" />
         </Link>
 
         <button

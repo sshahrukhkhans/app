@@ -105,7 +105,7 @@
   display: block;
   font-family: "red hat display", sans-serif;
   font-size: 36px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 36px;
   color: rgb(56, 201, 247);
 }
@@ -114,7 +114,7 @@
   margin: 8px 0 0;
   font-family: "DM Sans", sans-serif;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 21.7499px;
   color: rgb(27, 46, 89);
 }
@@ -192,7 +192,7 @@
   text-align: center;
   font-family: "red hat display", sans-serif;
   font-size: 40px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 48px;
   color: rgb(27, 46, 89);
 }
@@ -265,7 +265,7 @@
   margin: 2px 0 6px;
   font-family: "red hat display", sans-serif;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 24.1666px;
   color: rgb(28, 37, 57);
   white-space: normal;
@@ -289,7 +289,7 @@
   background: linear-gradient(90deg, #34c7f8, #2f62d7);
   font-family: "DM Sans", sans-serif;
   font-size: 17px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: normal;
   color: rgb(255, 255, 255);
   align-self: center;
@@ -405,7 +405,7 @@
   .process-stat-card strong {
     font-family: "red hat display", sans-serif;
     font-size: 36px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 36px;
     color: rgb(56, 201, 247);
   }
@@ -413,7 +413,7 @@
   .process-stat-card p {
     font-family: "DM Sans", sans-serif;
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 21.7499px;
     color: rgb(27, 46, 89);
   }
@@ -426,7 +426,7 @@
   .process-header h2 {
     font-family: "red hat display", sans-serif;
     font-size: 40px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 48px;
     color: rgb(27, 46, 89);
   }

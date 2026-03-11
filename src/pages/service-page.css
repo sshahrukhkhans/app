@@ -98,7 +98,7 @@
   margin: 0 0 14px;
   font-family: "red hat display", sans-serif;
   font-size: 60px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 72.4998px;
   color: #003b7f;
 }
@@ -149,7 +149,7 @@
   cursor: pointer;
   font-family: "red hat display", sans-serif;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 24.889px;
   color: rgb(28, 37, 57);
   backdrop-filter: blur(3px);
@@ -230,7 +230,7 @@
   margin: 0 0 16px;
   font-family: "red hat display", sans-serif;
   font-size: 48px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 57.9998px;
   color: rgb(28, 37, 57);
 }
@@ -245,7 +245,7 @@
 }
 
 .service-copy .service-highlight {
-  color: rgb(56, 201, 247);
+  color: #0E275F;
   font-weight: 600;
 }
 
@@ -351,7 +351,7 @@
   margin: 10px 0 8px;
   font-family: "red hat display", sans-serif;
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.22;
   color: rgb(28, 37, 57);
 }
@@ -634,13 +634,13 @@
   margin: 0;
   font-family: "red hat display", sans-serif;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.35;
   color: rgb(28, 37, 57);
 }
 
 .service-industry-rating strong {
-  font-weight: 700;
+  font-weight: 500;
   color: #7ca8cb;
   letter-spacing: 0.12em;
 }
@@ -670,7 +670,7 @@
   margin: 0;
   font-family: Poppins, "Poppins Fallback", sans-serif;
   font-size: 17.92px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 24.192px;
   color: rgb(10, 59, 99);
 }
@@ -813,7 +813,7 @@
   margin: 0;
   font-family: "red hat display", sans-serif;
   font-size: 48px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 57.9998px;
   color: rgb(28, 37, 57);
 }
@@ -887,7 +887,7 @@
   padding: 14px 48px;
   font-family: "red hat display", sans-serif;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 500;
   color: #ffffff;
   background: linear-gradient(90deg, #2ec9f8, #2f70e4);
   box-shadow: 0 14px 28px rgba(37, 106, 216, 0.3);

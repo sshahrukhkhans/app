@@ -172,7 +172,7 @@
   max-width: 1120px;
   font-family: "red hat display", sans-serif;
   font-size: clamp(28px, 2.4vw, 45px);
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.35;
   color: rgb(255, 255, 255);
 }
@@ -197,7 +197,7 @@
   color: #124676;
   font-family: "red hat display", sans-serif;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.25;
   text-align: center;
 }
@@ -221,7 +221,7 @@
   padding: 16px 42px;
   font-family: "DM Sans", sans-serif;
   font-size: 17px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: normal;
   color: rgb(255, 255, 255);
   background: linear-gradient(90deg, #2ec9f8, #2f70e4);

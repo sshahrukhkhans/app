@@ -74,8 +74,14 @@ const ServiceIcon = () => (
 
 const ServicePage = () => {
   const [hoveredService, setHoveredService] = useState("");
+  const [selectedService, setSelectedService] = useState("");
   const [slideIndex, setSlideIndex] = useState(0);
   const [cardsPerView, setCardsPerView] = useState(3);
+  const revealedService = hoveredService || selectedService;
+  const resetServiceSelection = () => {
+    setHoveredService("");
+    setSelectedService("");
+  };
 
   useEffect(() => {
     const updateCardsPerView = () => {
@@ -100,6 +106,21 @@ const ServicePage = () => {
 
     return () => {
       window.clearInterval(intervalId);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleDocumentClick = (event) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+      if (target.closest(".service-link-item")) return;
+      setHoveredService("");
+      setSelectedService("");
+    };
+
+    document.addEventListener("click", handleDocumentClick);
+    return () => {
+      document.removeEventListener("click", handleDocumentClick);
     };
   }, []);
 
@@ -128,17 +149,19 @@ const ServicePage = () => {
       <section className="service-main">
         <div className="container service-main-grid">
           <aside className="service-sidebar">
-            {serviceItems.map((item, index) => (
+            {serviceItems.map((item) => (
               <button
                 key={item}
                 className={`service-link-item${
-                  hoveredService === item ? " is-reveal-active" : ""
+                  hoveredService === item || selectedService === item ? " is-reveal-active" : ""
                 }`}
                 type="button"
+                aria-pressed={selectedService === item}
                 onMouseEnter={() => setHoveredService(item)}
                 onMouseLeave={() => setHoveredService("")}
                 onFocus={() => setHoveredService(item)}
                 onBlur={() => setHoveredService("")}
+                onClick={() => setSelectedService(item)}
               >
                 <span className="service-link-left">
                   <span className="service-link-icon">
@@ -151,8 +174,8 @@ const ServicePage = () => {
             ))}
           </aside>
 
-          <article className={`service-copy ${hoveredService ? "is-revealed" : ""}`}>
-            {hoveredService === "Comprehensive Audit Support Services" ? (
+          <article className={`service-copy ${revealedService ? "is-revealed" : ""}`}>
+            {revealedService === "Comprehensive Audit Support Services" ? (
               <>
                 <h2>Comprehensive Audit Support Services</h2>
                 <p>
@@ -199,7 +222,7 @@ const ServicePage = () => {
                   </article>
                 </div>
               </>
-            ) : hoveredService === "Substantive Audit Procedures" ? (
+            ) : revealedService === "Substantive Audit Procedures" ? (
               <>
                 <h2>Substantive Audit Procedures</h2>
                 <p>
@@ -256,7 +279,7 @@ const ServicePage = () => {
                   </article>
                 </div>
               </>
-            ) : hoveredService === "Internal Controls & Financial Reporting" ? (
+            ) : revealedService === "Internal Controls & Financial Reporting" ? (
               <>
                 <h2>Internal Controls &amp; Financial Reporting</h2>
                 <p>
@@ -308,14 +331,14 @@ const ServicePage = () => {
                     </span>
                     <h3>Financial Statement Preparation</h3>
                     <p>
-                      US GAAP/IFRS compliant balance sheets, income statements,
+                      global GAAP/IFRS compliant balance sheets, income statements,
                       cash flow statements, equity statements, and ASC-specific
                       footnote disclosures.
                     </p>
                   </article>
                 </div>
               </>
-            ) : hoveredService === "Specialized Support Services" ? (
+            ) : revealedService === "Specialized Support Services" ? (
               <>
                 <h2>Specialized Support Services</h2>
                 <div className="service-reveal-grid">
@@ -348,11 +371,11 @@ const ServicePage = () => {
                   </article>
                 </div>
               </>
-            ) : hoveredService === "Industry Expertise & Project Management" ? (
+            ) : revealedService === "Industry Expertise & Project Management" ? (
               <>
                 <h2>Industry Expertise &amp; Project Management</h2>
                 <p>
-                  Seamless coordination with US teams ensures efficient
+                  Seamless coordination with global teams ensures efficient
                   workflows and timely deliverables.
                 </p>
                 <div className="service-reveal-grid">
@@ -379,7 +402,7 @@ const ServicePage = () => {
                   </article>
                 </div>
               </>
-            ) : hoveredService === "Compliance, Security & Ethical Standards" ? (
+            ) : revealedService === "Compliance, Security & Ethical Standards" ? (
               <>
                 <h2>Compliance, Security &amp; Ethical Standards</h2>
                 <p>

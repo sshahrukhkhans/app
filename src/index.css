@@ -4,7 +4,10 @@
   box-sizing: border-box;
 }
 html{
+  max-width: 100%;
   overflow-x: hidden;
+  overflow-x: clip;
+  overflow-y: auto;
 }
 :root{
   font-family: sans-serif;
@@ -15,9 +18,11 @@ html{
 }
 body{
   min-width: 320px;
+  max-width: 100%;
   background: #ffffff;
   overflow-x: hidden;
   overflow-x: clip;
+  overflow-y: auto;
 }
 
 a{
@@ -30,8 +35,10 @@ ul{
 }
 #root{
   width: 100%;
+  max-width: 100%;
   background: #ffffff;
   overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .app-loader {
@@ -136,6 +143,7 @@ section,
   display: flex;
   flex-direction: column;
   gap: 0;
+  overflow-x: clip;
 }
 
 .home-page {
@@ -145,6 +153,7 @@ section,
 .page-route-transition {
   width: 100%;
   background: #ffffff;
+  overflow-x: clip;
 }
 
 .page-route-transition.fade-in {
@@ -204,14 +213,14 @@ section,
 .service-page-view h1 {
   color: #1c2c4f;
   font-size: clamp(32px, 4vw, 56px);
-  font-weight: 700;
+  font-weight: 500;
 }
 
 /* Home-only typography system */
 .home-page .hero h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 54px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.42;
 }
 

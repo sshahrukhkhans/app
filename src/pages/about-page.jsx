@@ -35,7 +35,7 @@ const testimonialSeed = [
   },
   {
     quote:
-      "Communication was precise and response times were reliable across time zones, which made execution smooth for our US workflow.",
+      "Communication was precise and response times were reliable across time zones, which made execution smooth for our global workflow.",
     name: "Daniel Scott",
     role: "Controller",
   },
@@ -62,7 +62,7 @@ const AboutPage = () => {
   }, []);
 
   useEffect(() => {
-    const targets = [25, 65, 250, 40];
+    const targets = [25, 20, 250, 40];
     let started = false;
 
     const animate = () => {
@@ -202,9 +202,9 @@ const AboutPage = () => {
         <div className="about-stats-overlay" />
         <div className="container about-stats-grid">
           {[
-            { label: "Number Of Awards" },
             { label: "Team Members" },
-            { label: "Successful Campaigns" },
+            { label: "Years Experience" },
+            { label: "Happy Clients" },
             { label: "Successful Campaigns" },
           ].map((item, index) => (
             <article key={`${item.label}-${index}`} className="about-stat-item">

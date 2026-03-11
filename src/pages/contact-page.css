@@ -23,7 +23,7 @@
   margin: 0 0 14px;
   font-family: "red hat display", sans-serif;
   font-size: 60px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 72.4998px;
   color: #003b7f;
 }
@@ -105,7 +105,7 @@
   margin: 0;
   font-family: "red hat display", sans-serif;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 24.1666px;
   color: rgb(28, 37, 57);
 }
@@ -172,7 +172,7 @@
   margin: 0;
   font-family: "red hat display", sans-serif;
   font-size: 48px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 57.9998px;
   color: rgb(28, 37, 57);
 }
@@ -246,7 +246,7 @@
   padding: 14px 48px;
   font-family: "red hat display", sans-serif;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 500;
   color: #ffffff;
   background: linear-gradient(90deg, #2ec9f8, #2f70e4);
   box-shadow: 0 14px 28px rgba(37, 106, 216, 0.3);

@@ -1,4 +1,4 @@
-import logoCnr from "../../../assets/images/logo.png";
+import logoFooter from "../../../assets/images/footer_logo.png";
 import instagramIcon from "../../../assets/images/Instagram.png";
 import facebookIcon from "../../../assets/images/Facebook.png";
 import xIcon from "../../../assets/images/twitter.jpg";
@@ -9,15 +9,14 @@ const SiteFooterSection = () => {
     <footer className="site-footer-section">
       <div className="container site-footer-wrap">
         <div className="site-footer-col site-footer-brand-col">
-          <img src={logoCnr} alt="CNR logo" />
-          <h3>CNR IntelliGrow LLP</h3>
+          <img src={logoFooter} alt="CNR logo" />
         </div>
 
         <div className="site-footer-col">
           <h4>OUR ADDRESS</h4>
           <p>No.14/6M, Dhanrith Villa, Hospital Road,</p>
           <p>Sulur, Coimbatore - 641402</p>
-          <p>Tamil Nadu, Southern India</p>
+          <p>Tamil Nadu,India</p>
         </div>
 
         <div className="site-footer-col">

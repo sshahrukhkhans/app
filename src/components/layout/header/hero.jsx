@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import bannerTwo from "../../../assets/images/h3-banner2.png";
 import shapeOne from "../../../assets/images/h3-shape1.png";
- 
+
 const leftBannerSrc =
   "https://demo.bravisthemes.com/jackcerra/wp-content/uploads/2023/03/h3-banner1.png";
  
@@ -26,10 +26,10 @@ const Hero = () => {
             We Provide Investment <br />
             Reliable audit support that
             <br />
-            strengthens partner review confidence.
+            strengthens partner review confidence
           </h1>
           <p>
-            Standards-aligned planning, workpapers, and substantive testing delivered by a secure India-based team that fits global firm workflows.
+            Standards-aligned planning, workpapers, and substantive testing delivered by a secure India-based team that fits global firm workflows
           </p>
           <div className="hero-buttons">
             <Link to="/about-us" className="primary">Learn More</Link>

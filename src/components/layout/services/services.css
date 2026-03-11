@@ -38,7 +38,7 @@
   max-width: 100%;
   font-family: "red hat display", sans-serif;
   font-size: 40px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 48px;
   color: rgb(27, 46, 89);
 }
@@ -147,7 +147,7 @@
   margin: 0 0 8px;
   font-family: "red hat display", sans-serif;
   font-size: clamp(1.2rem, 1.75vw, 1.5rem);
-  font-weight: 700;
+  font-weight: 500;
   line-height: 28.9999px;
   color: rgb(24, 48, 75);
   max-width: 320px;

@@ -6,28 +6,32 @@
 .site-footer-wrap {
   max-width: 1240px;
   display: grid;
-  grid-template-columns: minmax(220px, 1fr) minmax(240px, 1fr) minmax(180px, 0.8fr) minmax(200px, 1fr);
-  gap: 28px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 28px);
   align-items: start;
+}
+
+.site-footer-section > .container.site-footer-wrap {
+  width: 100%;
+  max-width: none;
+  padding-inline: clamp(10px, 1.4vw, 24px);
+}
+
+.site-footer-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .site-footer-col h4 {
   margin: 0 0 20px;
   font-family: "red hat display", sans-serif;
   font-size: 23px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 28.9999px;
   color: rgb(255, 255, 255);
   letter-spacing: 0;
-}
-
-.site-footer-wrap > .site-footer-col:nth-child(2),
-.site-footer-wrap > .site-footer-col:nth-child(3) {
-  text-align: center;
-}
-
-.site-footer-wrap > .site-footer-col:nth-child(3) {
-  margin-left: 12px;
 }
 
 .site-footer-col p {
@@ -49,10 +53,10 @@
 }
 
 .site-footer-brand-col img {
-  width: 96px;
-  height: 96px;
+  width: 200px;
+  height: 100px;
   object-fit: contain;
-  filter: grayscale(100%) brightness(1.2);
+  filter: none;
   display: block;
   margin: 0;
 }
@@ -68,6 +72,7 @@
 
 .site-footer-brand-col {
   justify-self: start;
+  align-items: flex-start;
   text-align: left;
   margin-left: 0;
 }
@@ -75,12 +80,15 @@
 .site-footer-socials {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 14px;
   margin-top: 10px;
 }
 
 .site-footer-wrap > .site-footer-col:last-child {
   justify-self: end;
+  align-items: flex-end;
+  text-align: right;
   margin-right: 0;
 }
 
@@ -117,13 +125,18 @@
   gap: 20px;
 }
 
+.site-footer-section > .container.site-footer-bottom {
+  width: 100%;
+  max-width: none;
+  padding-inline: clamp(10px, 1.4vw, 24px);
+}
+
 .site-footer-bottom::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100vw;
+  left: 0;
+  width: 100%;
   border-top: 1px solid rgba(176, 196, 229, 0.22);
 }
 
@@ -140,7 +153,7 @@
   font-weight: 400;
   line-height: 24.889px;
   color: rgb(255, 255, 255);
-  margin-left: 0;
+  margin-right: auto;
 }
 
 .site-footer-bottom p:last-child {
@@ -149,36 +162,29 @@
   font-weight: 500;
   line-height: 21.7778px;
   color: rgb(255, 255, 255);
-  margin-left: 0;
-  margin-right: 0;
+  margin-left: auto;
+  text-align: right;
 }
 
 @media (max-width: 1200px) {
   .site-footer-wrap {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 34px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
   }
 
-  .site-footer-brand-col {
-    margin-left: 0;
+  .site-footer-col h4 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .site-footer-col p {
+    font-size: 14px;
+    line-height: 1.55;
   }
 
   .site-footer-socials a {
     width: 28px;
     height: 28px;
-  }
-
-  .site-footer-wrap > .site-footer-col:last-child {
-    margin-right: 0;
-  }
-
-  .site-footer-wrap > .site-footer-col:nth-child(3) {
-    margin-left: 0;
-  }
-
-  .site-footer-wrap > .site-footer-col:nth-child(2),
-  .site-footer-wrap > .site-footer-col:nth-child(3) {
-    text-align: left;
   }
 
   .site-footer-bottom p:first-child {
@@ -197,12 +203,8 @@
   }
 
   .site-footer-wrap {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 18px;
-  }
-
-  .site-footer-wrap > .site-footer-col:last-child {
-    justify-self: start;
   }
 
   .site-footer-brand-col img {
@@ -226,12 +228,21 @@
     font-size: 14px;
   }
 
-  .site-footer-brand-col {
+  .site-footer-bottom p:first-child,
+  .site-footer-bottom p:last-child {
+    margin-right: 0;
     margin-left: 0;
+    text-align: left;
   }
 
   .site-footer-col h4 {
-    font-size: 1.45rem;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+
+  .site-footer-col p {
+    font-size: 0.82rem;
+    line-height: 1.45;
   }
 }
 
@@ -240,16 +251,21 @@
     padding: 28px 0 20px;
   }
 
-  .site-footer-brand-col h3 {
-    font-size: 1.5rem;
+  .site-footer-socials {
+    gap: 8px;
+  }
+
+  .site-footer-socials a {
+    width: 24px;
+    height: 24px;
+  }
+
+  .site-footer-col h4 {
+    font-size: 0.98rem;
   }
 
   .site-footer-col p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-
-  .site-footer-socials {
-    gap: 10px;
+    font-size: 0.74rem;
+    line-height: 1.35;
   }
 }

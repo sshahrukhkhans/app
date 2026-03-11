@@ -47,7 +47,7 @@
   margin: 0;
   font-family: "red hat display", sans-serif;
   font-size: 40px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 48px;
   color: rgb(27, 46, 89);
 }
@@ -161,7 +161,7 @@
   margin: 0;
   font-family: "red hat display", sans-serif;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 21.7499px;
   color: rgb(27, 46, 89);
   white-space: nowrap;
