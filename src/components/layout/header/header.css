@@ -107,8 +107,8 @@
 }
 
 .logo-mark {
-  width: 56px;
-  height: 56px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
   flex-shrink: 0;
 }
@@ -164,26 +164,94 @@
   width: 100%;
   min-height: 40px;
   padding: 0 14px;
+  border: 1px solid transparent;
   border-radius: 999px;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   font-size: 15px;
   font-weight: 600;
   line-height: 1;
   letter-spacing: 0.01em;
   color: #eaf3ff;
-  transition: color 0.22s ease, transform 0.22s ease, background-color 0.22s ease,
-    box-shadow 0.22s ease;
+  transition: color 0.26s ease, transform 0.26s ease, background-color 0.26s ease,
+    box-shadow 0.26s ease, border-color 0.26s ease;
+}
+
+.nav-links a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transform: scale(0.9);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.38) 0%,
+    rgba(201, 226, 255, 0.2) 45%,
+    rgba(92, 161, 250, 0.18) 100%
+  );
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: -2;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  top: -70%;
+  left: -26%;
+  width: 38%;
+  height: 240%;
+  border-radius: 50%;
+  opacity: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.72) 0%,
+    rgba(255, 255, 255, 0.22) 45%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateX(-150%) rotate(18deg);
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
+  z-index: -1;
 }
  
 .nav-links a:hover {
   color: #ffffff;
-  background: linear-gradient(90deg, #27c5f8, #3b73de);
+  background: rgba(169, 209, 255, 0.12);
+  border-color: rgba(196, 223, 255, 0.62);
   transform: translateY(-1px);
-  box-shadow: 0 8px 16px rgba(45, 107, 220, 0.28);
+  box-shadow:
+    0 10px 20px rgba(7, 32, 70, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(12px) saturate(165%);
+  -webkit-backdrop-filter: blur(12px) saturate(165%);
+}
+
+.nav-links a:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.nav-links a:hover::after {
+  opacity: 0.9;
+  transform: translateX(320%) rotate(18deg);
 }
 
 .nav-links a:focus-visible {
   outline: 2px solid #7cb4ff;
   outline-offset: 2px;
+  border-color: rgba(196, 223, 255, 0.62);
+  background: rgba(169, 209, 255, 0.12);
+  box-shadow:
+    0 10px 20px rgba(7, 32, 70, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(12px) saturate(165%);
+  -webkit-backdrop-filter: blur(12px) saturate(165%);
+}
+
+.nav-links a:focus-visible::before {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .nav-contacts {
@@ -252,7 +320,7 @@
 .hero {
   position: relative;
   overflow: hidden;
-  min-height: 740px;
+  min-height: 880px;
   padding: 0;
   background: #edf1f7;
   display: flex;
@@ -289,7 +357,7 @@
   position: relative;
   z-index: 6;
   width: 100%;
-  min-height: 740px;
+  min-height: 880px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -298,7 +366,7 @@
 }
  
 .hero-copy {
-  width: min(100%, 980px);
+  width: min(100%, 1140px);
   margin: 0 auto;
 }
  
@@ -322,7 +390,7 @@
   font-size: 55px;
   font-weight: 700;
   line-height: 80.5px;
-  max-width: 980px;
+  max-width: 1140px;
   margin: 12px 0 16px;
   margin-left: auto;
   margin-right: auto;
@@ -399,7 +467,7 @@
   bottom: 0;
   z-index: 6;
   pointer-events: none;
-  height: min(40vw, 560px);
+  height: min(45vw, 700px);
   width: auto;
   object-fit: contain;
   opacity: 0;
@@ -799,8 +867,8 @@
   }
 
   .logo-mark {
-    width: 46px;
-    height: 46px;
+    width: 52px;
+    height: 52px;
   }
 
   .logo-title {

@@ -29,7 +29,7 @@ const Hero = () => {
             strengthens partner review confidence.
           </h1>
           <p>
-            Standards-aligned planning, workpapers, and substantive testing delivered by a secure India-based team that fits US firm workflows.
+            Standards-aligned planning, workpapers, and substantive testing delivered by a secure India-based team that fits global firm workflows.
           </p>
           <div className="hero-buttons">
             <Link to="/about-us" className="primary">Learn More</Link>

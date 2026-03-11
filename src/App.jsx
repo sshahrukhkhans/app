@@ -437,6 +437,45 @@ function App() {
           },
         });
 
+        gsap.from(".service-drop-line-wrap", {
+          autoAlpha: 0,
+          y: 44,
+          scale: 0.95,
+          duration: 0.84,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".service-drop-line-section",
+            start: "top 82%",
+            once: true,
+          },
+        });
+
+        gsap.from(".service-drop-line-header > *", {
+          autoAlpha: 0,
+          y: 22,
+          stagger: 0.08,
+          duration: 0.62,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".service-drop-line-section",
+            start: "top 78%",
+            once: true,
+          },
+        });
+
+        gsap.from(".service-drop-line-grid input, .service-drop-line-grid textarea, .service-drop-line-grid button", {
+          autoAlpha: 0,
+          y: 18,
+          stagger: 0.06,
+          duration: 0.54,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".service-drop-line-grid",
+            start: "top 86%",
+            once: true,
+          },
+        });
+
       }
 
       if (displayLocation.pathname === "/contact-us") {

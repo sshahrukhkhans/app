@@ -1,4 +1,4 @@
-import logoCnr from "../../../assets/images/logo-cnr.webp";
+import logoCnr from "../../../assets/images/logo.png";
 import instagramIcon from "../../../assets/images/Instagram.png";
 import facebookIcon from "../../../assets/images/Facebook.png";
 import xIcon from "../../../assets/images/twitter.jpg";
