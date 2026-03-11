@@ -536,6 +536,7 @@
 .hero-person-left {
   left: clamp(-10px, -1vw, 0px);
   animation-delay: 0.18s;
+  mix-blend-mode: darken;
 }
  
 .hero-person-right {

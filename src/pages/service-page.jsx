@@ -78,10 +78,6 @@ const ServicePage = () => {
   const [slideIndex, setSlideIndex] = useState(0);
   const [cardsPerView, setCardsPerView] = useState(3);
   const revealedService = hoveredService || selectedService;
-  const resetServiceSelection = () => {
-    setHoveredService("");
-    setSelectedService("");
-  };
 
   useEffect(() => {
     const updateCardsPerView = () => {

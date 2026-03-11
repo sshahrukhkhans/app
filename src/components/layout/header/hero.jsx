@@ -1,14 +1,12 @@
 import { Link } from "react-router-dom";
+import bannerOne from "../../../assets/images/h3-banner1.png";
 import bannerTwo from "../../../assets/images/h3-banner2.png";
 import shapeOne from "../../../assets/images/h3-shape1.png";
-
-const leftBannerSrc =
-  "https://demo.bravisthemes.com/jackcerra/wp-content/uploads/2023/03/h3-banner1.png";
  
 const Hero = () => {
   return (
     <section className="hero">
-      <img className="hero-person hero-person-left" src={leftBannerSrc} alt="Consultant portrait" />
+      <img className="hero-person hero-person-left" src={bannerOne} alt="Consultant portrait" />
       <img className="hero-person hero-person-right" src={bannerTwo} alt="Business expert" />
       <img className="hero-arc hero-arc-left" src={shapeOne} alt="" />
       <img className="hero-arc hero-arc-right" src={shapeOne} alt="" />
