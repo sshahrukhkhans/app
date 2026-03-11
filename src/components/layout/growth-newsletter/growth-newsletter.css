@@ -398,7 +398,7 @@
   color: #203462;
   font-size: clamp(24px, 2.2vw, 36px);
   line-height: 1.12;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .growth-btn {
@@ -409,7 +409,7 @@
   background: #35bbe8;
   color: #fff;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .newsletter-row {
@@ -450,7 +450,7 @@
   background: #244485;
   color: #fff;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
   border-radius: 14px;
 }

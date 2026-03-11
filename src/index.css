@@ -234,8 +234,12 @@ section,
 .home-page .invest-cta-content h2 {
   font-family: "Montserrat", sans-serif;
   font-size: 30px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.3;
+}
+
+.home-page .invest-cta-content h2 {
+  font-weight: 500;
 }
 
 .home-page .service-card h3,

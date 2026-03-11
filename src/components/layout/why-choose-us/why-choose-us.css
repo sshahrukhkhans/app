@@ -144,7 +144,7 @@
   background: #31bff4;
   color: #fff;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
   box-shadow: 0 16px 28px rgba(54, 172, 237, 0.2);
 }
 
@@ -154,7 +154,7 @@
   gap: 16px;
   color: #1e2a44;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .why-video-icon {
@@ -325,7 +325,7 @@
   background: #2f7ce8;
   color: #fff;
   font-size: 9px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .why-float-bottom {

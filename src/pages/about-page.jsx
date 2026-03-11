@@ -219,7 +219,7 @@ const AboutPage = () => {
       <section className="about-testimonial-section" aria-label="Client testimonial">
         <div className="container about-testimonial-layout">
           <div className="about-testimonial-intro">
-            <p className="about-testimonial-kicker">CLIENTS TESTIMNIAL</p>
+            <p className="about-testimonial-kicker">CLIENTS TESTIMONIAL</p>
             <h2>
               What our Clients
               <br />

@@ -51,7 +51,7 @@
 }
 
 .top-right a {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .top-info-item {
@@ -187,7 +187,7 @@
   overflow: hidden;
   isolation: isolate;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1;
   letter-spacing: 0.01em;
   color: #eaf3ff;
@@ -322,7 +322,7 @@
   color: #ffffff;
   background: linear-gradient(90deg, #23c6f7, #265fca);
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 500;
   border-radius: 12px;
   padding: 12px 22px;
   cursor: pointer;
@@ -487,7 +487,7 @@
   border-radius: 13px;
   padding: 15px 40px;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
   text-decoration: none;
 }
