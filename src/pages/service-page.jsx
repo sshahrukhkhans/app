@@ -79,9 +79,9 @@ const ServicePage = () => {
 
   useEffect(() => {
     const updateCardsPerView = () => {
-      if (window.innerWidth >= 900) {
+      if (window.innerWidth >= 1025) {
         setCardsPerView(3);
-      } else if (window.innerWidth >= 640) {
+      } else if (window.innerWidth >= 769) {
         setCardsPerView(2);
       } else {
         setCardsPerView(1);

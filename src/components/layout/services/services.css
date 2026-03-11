@@ -107,7 +107,7 @@
  
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(240px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 34px 24px;
   align-items: stretch;
 }
@@ -146,7 +146,7 @@
 .service-card h3 {
   margin: 0 0 8px;
   font-family: "red hat display", sans-serif;
-  font-size: 24px;
+  font-size: clamp(1.2rem, 1.75vw, 1.5rem);
   font-weight: 700;
   line-height: 28.9999px;
   color: rgb(24, 48, 75);
@@ -233,8 +233,25 @@
     gap: 28px 20px;
   }
 }
+
+@media (max-width: 1024px) {
+  .services-section {
+    padding: 80px 0 96px;
+  }
+
+  .services-intro h2 {
+    font-size: clamp(2rem, 4vw, 2.25rem);
+    line-height: 1.2;
+  }
+
+  .services-intro p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 18px 0 28px;
+  }
+}
  
-@media (max-width: 780px) {
+@media (max-width: 768px) {
   .services-section {
     padding: 72px 0 90px;
   }
@@ -245,11 +262,11 @@
   }
  
   .services-intro h2 {
-    font-size: 34px;
+    font-size: clamp(1.7rem, 7vw, 2rem);
   }
  
   .services-intro p {
-    font-size: 17px;
+    font-size: 0.98rem;
   }
  
   .services-btn {
@@ -277,5 +294,45 @@
     height: 16px;
     right: 6%;
     bottom: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-section {
+    padding: 64px 0 72px;
+  }
+
+  .services-layout {
+    gap: 34px;
+  }
+
+  .services-kicker-wrap {
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .services-kicker-line {
+    width: 54px;
+  }
+
+  .service-icon {
+    width: 76px;
+    height: 76px;
+  }
+
+  .service-icon svg {
+    width: 46px;
+    height: 46px;
+  }
+
+  .service-card h3 {
+    font-size: 1.15rem;
+    line-height: 1.3;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .service-card:hover .service-icon {
+    transform: none;
   }
 }

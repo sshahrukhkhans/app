@@ -17,6 +17,7 @@ body{
   min-width: 320px;
   background: #ffffff;
   overflow-x: hidden;
+  overflow-x: clip;
 }
 
 a{
@@ -113,6 +114,22 @@ ul{
 img{
   max-width: 100%;
   height: auto;
+}
+
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+.app-sections,
+.app-sections > * {
+  min-width: 0;
+}
+
+section,
+.container {
+  max-width: 100%;
 }
 
 .app-sections{
@@ -426,6 +443,52 @@ img{
   .home-page .invest-cta-content p {
     font-size: 15px;
     line-height: 1.6;
+  }
+
+  .scroll-section {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-page .hero h1 {
+    font-size: 26px;
+    line-height: 1.25;
+  }
+
+  .home-page .services-intro h2,
+  .home-page .case-header h2,
+  .home-page .why-content h2,
+  .home-page .process-content h2,
+  .home-page .growth-content h2,
+  .home-page .testimonial-header h2,
+  .home-page .latest-news-header h2,
+  .home-page .invest-cta-content h2 {
+    font-size: 19px;
+    line-height: 1.3;
+  }
+
+  .home-page .hero p,
+  .home-page .services-intro p,
+  .home-page .service-card p,
+  .home-page .case-header p,
+  .home-page .case-card-caption span,
+  .home-page .why-item p,
+  .home-page .process-point p,
+  .home-page .growth-copy,
+  .home-page .growth-procedure-card p,
+  .home-page .testimonial-header p,
+  .home-page .testimonial-card p,
+  .home-page .testimonial-person span,
+  .home-page .latest-news-header p,
+  .home-page .latest-news-body p,
+  .home-page .latest-news-author span,
+  .home-page .invest-cta-content p {
+    font-size: 14px;
+    line-height: 1.55;
   }
 }
 

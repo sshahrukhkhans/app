@@ -128,7 +128,8 @@ function App() {
     if (displayLocation.pathname !== "/") return undefined;
 
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReducedMotion) return undefined;
+    const isSmallViewport = window.matchMedia("(max-width: 768px)").matches;
+    if (prefersReducedMotion || isSmallViewport) return undefined;
 
     const hoverCleanup = [];
     const ctx = gsap.context(() => {
@@ -258,7 +259,8 @@ function App() {
     if (displayLocation.pathname === "/") return undefined;
 
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReducedMotion) return undefined;
+    const isSmallViewport = window.matchMedia("(max-width: 768px)").matches;
+    if (prefersReducedMotion || isSmallViewport) return undefined;
 
     const ctx = gsap.context(() => {
       if (displayLocation.pathname === "/about-us") {

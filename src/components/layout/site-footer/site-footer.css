@@ -63,13 +63,13 @@
   font-size: 32px;
   line-height: 1.2;
   letter-spacing: 0.6px;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .site-footer-brand-col {
   justify-self: start;
   text-align: left;
-  margin-left: calc((100vw - min(92vw, 1200px)) / -2 + 48px);
+  margin-left: 0;
 }
 
 .site-footer-socials {
@@ -81,7 +81,7 @@
 
 .site-footer-wrap > .site-footer-col:last-child {
   justify-self: end;
-  margin-right: calc((100vw - min(92vw, 1200px)) / -2 + 28px);
+  margin-right: 0;
 }
 
 .site-footer-socials a {
@@ -140,7 +140,7 @@
   font-weight: 400;
   line-height: 24.889px;
   color: rgb(255, 255, 255);
-  margin-left: calc((100vw - min(92vw, 1200px)) / -2 + 32px);
+  margin-left: 0;
 }
 
 .site-footer-bottom p:last-child {
@@ -150,12 +150,12 @@
   line-height: 21.7778px;
   color: rgb(255, 255, 255);
   margin-left: 0;
-  margin-right: calc((100vw - min(92vw, 1200px)) / -2 + 28px);
+  margin-right: 0;
 }
 
 @media (max-width: 1200px) {
   .site-footer-wrap {
-    grid-template-columns: repeat(2, minmax(240px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 34px;
   }
 
@@ -176,6 +176,11 @@
     margin-left: 0;
   }
 
+  .site-footer-wrap > .site-footer-col:nth-child(2),
+  .site-footer-wrap > .site-footer-col:nth-child(3) {
+    text-align: left;
+  }
+
   .site-footer-bottom p:first-child {
     margin-left: 0;
   }
@@ -186,7 +191,7 @@
   }
 }
 
-@media (max-width: 780px) {
+@media (max-width: 768px) {
   .site-footer-section {
     padding: 34px 0 24px;
   }
@@ -194,6 +199,10 @@
   .site-footer-wrap {
     grid-template-columns: 1fr;
     gap: 18px;
+  }
+
+  .site-footer-wrap > .site-footer-col:last-child {
+    justify-self: start;
   }
 
   .site-footer-brand-col img {
@@ -219,5 +228,28 @@
 
   .site-footer-brand-col {
     margin-left: 0;
+  }
+
+  .site-footer-col h4 {
+    font-size: 1.45rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-footer-section {
+    padding: 28px 0 20px;
+  }
+
+  .site-footer-brand-col h3 {
+    font-size: 1.5rem;
+  }
+
+  .site-footer-col p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .site-footer-socials {
+    gap: 10px;
   }
 }

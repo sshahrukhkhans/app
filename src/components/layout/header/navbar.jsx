@@ -1,7 +1,28 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import logoCnr from "../../../assets/images/logo.png";
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1024) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const closeMenu = () => setIsMenuOpen(false);
+
   return (
     <nav className="navbar">
       <div className="container nav-container">
@@ -11,11 +32,26 @@ const Navbar = () => {
             <span className="logo-title">CNR IntelliGrow LLP</span>
           </span>
         </Link>
-        <ul className="nav-links">
-          <li><Link to="/about-us">About Us</Link></li>
-          <li><Link to="/services">Services</Link></li>
-          <li><Link to="/contact-us">Contact Us</Link></li>
+
+        <button
+          className={`nav-toggle${isMenuOpen ? " is-open" : ""}`}
+          type="button"
+          aria-label="Toggle navigation menu"
+          aria-expanded={isMenuOpen}
+          aria-controls="site-nav-links"
+          onClick={() => setIsMenuOpen((open) => !open)}
+        >
+          <span className="nav-toggle-line" />
+          <span className="nav-toggle-line" />
+          <span className="nav-toggle-line" />
+        </button>
+
+        <ul id="site-nav-links" className={`nav-links${isMenuOpen ? " is-open" : ""}`}>
+          <li><Link to="/about-us" onClick={closeMenu}>About Us</Link></li>
+          <li><Link to="/services" onClick={closeMenu}>Services</Link></li>
+          <li><Link to="/contact-us" onClick={closeMenu}>Contact Us</Link></li>
         </ul>
+
         <div className="nav-contacts">
           <a className="nav-contact-link" href="tel:+919876543210" aria-label="Call us">
             <svg className="nav-contact-icon" viewBox="0 0 24 24" aria-hidden="true">

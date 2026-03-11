@@ -79,7 +79,7 @@
   font-weight: 700;
   line-height: 48px;
   color: rgb(27, 46, 89);
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .why-list {
@@ -463,7 +463,7 @@
   }
 }
 
-@media (max-width: 780px) {
+@media (max-width: 768px) {
   .why-section {
     padding: 66px 0 0;
   }
@@ -478,8 +478,8 @@
   }
 
   .why-content h2 {
-    max-width: 320px;
-    font-size: 34px;
+    max-width: 100%;
+    font-size: clamp(1.9rem, 7vw, 2.2rem);
   }
 
   .why-item {
@@ -493,12 +493,13 @@
   }
 
   .why-item h3 {
-    font-size: 26px;
+    font-size: 1.25rem;
+    line-height: 1.3;
   }
 
   .why-item p {
     max-width: 100%;
-    font-size: 17px;
+    font-size: 1rem;
   }
 
   .why-actions {
@@ -512,7 +513,7 @@
   }
 
   .why-video-link {
-    font-size: 18px;
+    font-size: 1rem;
   }
 
   .why-video-icon {
@@ -522,7 +523,7 @@
   }
 
   .why-media {
-    min-height: 460px;
+    min-height: 380px;
   }
 
   .why-team-banner {
@@ -553,6 +554,70 @@
     border-width: 30px;
     left: 2%;
     bottom: 64px;
+  }
+}
+
+@media (max-width: 480px) {
+  .why-section {
+    padding: 52px 0 0;
+  }
+
+  .why-panel {
+    padding: 24px 14px 0;
+    border-radius: 18px;
+  }
+
+  .why-kicker-wrap {
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .why-kicker-line {
+    width: 56px;
+  }
+
+  .why-item {
+    grid-template-columns: 46px 1fr;
+    gap: 12px;
+  }
+
+  .why-item-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .why-item-icon svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .why-item h3 {
+    font-size: 1.05rem;
+  }
+
+  .why-item p {
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  .why-btn-primary {
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px;
+    border-radius: 12px;
+  }
+
+  .why-media {
+    min-height: 280px;
+  }
+
+  .why-chart-banner,
+  .why-semi-circle,
+  .why-small-dot,
+  .why-media-ring,
+  .why-float-top,
+  .why-float-bottom {
+    display: none;
   }
 }
 

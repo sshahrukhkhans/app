@@ -41,16 +41,33 @@ const TestimonialSection = () => {
   const headerRef = useRef(null);
   const cardsRef = useRef(null);
   const [startIndex, setStartIndex] = useState(0);
+  const [cardsPerView, setCardsPerView] = useState(3);
   const isAnimatingRef = useRef(false);
 
   const visibleTestimonials = useMemo(
     () =>
-      Array.from({ length: 3 }, (_, offset) => {
+      Array.from({ length: cardsPerView }, (_, offset) => {
         const index = (startIndex + offset) % testimonials.length;
         return testimonials[index];
       }),
-    [startIndex]
+    [cardsPerView, startIndex]
   );
+
+  useEffect(() => {
+    const updateCardsPerView = () => {
+      if (window.innerWidth <= 768) {
+        setCardsPerView(1);
+      } else if (window.innerWidth <= 1024) {
+        setCardsPerView(2);
+      } else {
+        setCardsPerView(3);
+      }
+    };
+
+    updateCardsPerView();
+    window.addEventListener("resize", updateCardsPerView);
+    return () => window.removeEventListener("resize", updateCardsPerView);
+  }, []);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -137,7 +154,11 @@ const TestimonialSection = () => {
           </header>
 
           <div className="testimonial-cards-wrap">
-            <div className="testimonial-cards" ref={cardsRef}>
+            <div
+              className="testimonial-cards"
+              ref={cardsRef}
+              style={{ "--testimonial-visible": cardsPerView }}
+            >
               {visibleTestimonials.map((item) => (
                 <div key={item.name} className="testimonial-item">
                   <article className="testimonial-card">

@@ -418,8 +418,13 @@
 }
 
 @media (max-width: 1024px) {
+  .service-main {
+    padding: 48px 0 60px;
+  }
+
   .service-main-grid {
     grid-template-columns: 1fr;
+    gap: 22px;
   }
 
   .service-hero {
@@ -436,11 +441,12 @@
 
   .service-page-banner-content h1 {
     margin-bottom: 10px;
-    font-size: 60px;
+    font-size: clamp(2.2rem, 7vw, 3rem);
+    line-height: 1.15;
   }
 
   .service-page-breadcrumb {
-    font-size: 18px;
+    font-size: 1rem;
     gap: 10px;
   }
 }
@@ -707,11 +713,6 @@
     display: none;
   }
 
-  .service-industry-row {
-    --cards-per-view: 2;
-    --slide-gap: 16px;
-  }
-
   .service-industry-card h3 {
     font-size: 17.92px;
     line-height: 24.192px;
@@ -723,7 +724,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .service-industry-intro h2 {
     font-size: 16px;
     line-height: 28px;
@@ -904,6 +905,11 @@
     padding: 36px 20px 46px;
   }
 
+  .service-industry-row {
+    --cards-per-view: 2;
+    --slide-gap: 16px;
+  }
+
   .service-drop-line-header h2 {
     font-size: 36px;
     line-height: 1.2;
@@ -921,5 +927,152 @@
   .service-drop-line-grid button {
     font-size: 18px;
     width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-page-banner img {
+    height: clamp(210px, 34vh, 280px);
+    object-position: center 24%;
+  }
+
+  .service-page-banner-content h1 {
+    font-size: clamp(1.9rem, 8vw, 2.35rem);
+    margin-bottom: 8px;
+  }
+
+  .service-page-breadcrumb {
+    font-size: 0.92rem;
+    gap: 8px;
+  }
+
+  .service-link-item {
+    padding: 14px 16px;
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+
+  .service-copy {
+    padding: 18px 0;
+  }
+
+  .service-copy h2 {
+    font-size: clamp(1.8rem, 7vw, 2.25rem);
+    line-height: 1.24;
+    margin-bottom: 10px;
+  }
+
+  .service-copy p,
+  .service-reveal-card p,
+  .service-reveal-list li {
+    font-size: 0.95rem;
+    line-height: 1.58;
+  }
+
+  .service-reveal-card h3 {
+    font-size: 1.1rem;
+    line-height: 1.35;
+  }
+
+  .service-industry-section {
+    padding: 64px 0 66px;
+  }
+
+  .service-industry-intro h2 {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .service-industry-card {
+    min-height: 220px;
+  }
+
+  .service-industry-card h3 {
+    font-size: 1.05rem;
+    line-height: 1.35;
+  }
+
+  .service-industry-quote {
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  .service-drop-line-section {
+    padding: 0 0 70px;
+  }
+
+  .service-drop-line-header h2 {
+    font-size: clamp(1.8rem, 8vw, 2.2rem);
+  }
+
+  .service-drop-line-header p {
+    font-size: 0.95rem;
+  }
+
+  .service-drop-line-grid input,
+  .service-drop-line-grid textarea {
+    font-size: 0.95rem;
+    padding: 14px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-main {
+    padding: 40px 0 52px;
+  }
+
+  .service-page-banner img {
+    height: 190px;
+  }
+
+  .service-page-breadcrumb {
+    font-size: 0.86rem;
+  }
+
+  .service-link-left {
+    gap: 10px;
+  }
+
+  .service-link-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .service-link-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .service-link-arrow {
+    font-size: 1.25rem;
+  }
+
+  .service-reveal-grid {
+    gap: 10px;
+  }
+
+  .service-reveal-card {
+    padding: 12px 10px;
+    border-radius: 10px;
+  }
+
+  .service-industry-section {
+    padding: 56px 0 58px;
+  }
+
+  .service-industry-divider,
+  .service-drop-line-divider {
+    width: 64px;
+  }
+
+  .service-drop-line-wrap {
+    border-radius: 14px;
+    padding: 30px 12px 36px;
+  }
+
+  .service-drop-line-grid button {
+    margin-top: 10px;
+    font-size: 1rem;
+    padding: 12px 20px;
   }
 }
