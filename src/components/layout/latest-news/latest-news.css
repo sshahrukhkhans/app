@@ -230,13 +230,13 @@
   font-size: 14px;
   font-weight: 500;
   line-height: 21.7778px;
-  color: rgb(56, 201, 247);
+  color: rgb(27, 46, 89);
   letter-spacing: 0;
   transition: color 0.22s ease, transform 0.22s ease;
 }
 
 .latest-news-card:hover .latest-news-body a {
-  color: #2e77e8;
+  color: rgb(27, 46, 89);
   transform: translateX(4px);
 }
 

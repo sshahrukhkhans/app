@@ -183,12 +183,12 @@
   font-size: 14px;
   font-weight: 500;
   line-height: 1.4;
-  color: #2e78e8;
+  color: rgb(27, 46, 89);
   transition: color 0.22s ease, transform 0.22s ease;
 }
 
 .blog-page-card-body a:hover {
-  color: #0e275f;
+  color: rgb(27, 46, 89);
 }
 
 .blog-page-card:hover .blog-page-card-body a {
