@@ -1021,6 +1021,14 @@
 }
 
 @media (max-width: 480px) {
+  .service-page-banner-content .container {
+    width: 100%;
+    max-width: none;
+    padding-inline: 6px;
+    display: grid;
+    justify-items: start;
+  }
+
   .service-main {
     padding: 40px 0 52px;
   }
@@ -1030,18 +1038,20 @@
   }
 
   .service-page-banner-content h1 {
-    font-size: clamp(1.75rem, 9vw, 2.1rem);
-    line-height: 1.12;
-    margin-bottom: 6px;
-    max-width: 12ch;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: clamp(1.5rem, 8vw, 1.9rem);
+    line-height: 1.08;
+    margin-bottom: 4px;
+    max-width: min(44vw, 180px);
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .service-page-breadcrumb {
-    font-size: 0.84rem;
-    line-height: 1.35;
-    gap: 6px;
+    max-width: min(44vw, 180px);
+    justify-content: flex-start;
+    font-size: 0.78rem;
+    line-height: 1.28;
+    gap: 4px;
   }
 
   .service-link-left {
