@@ -309,6 +309,17 @@
 }
 
 @media (max-width: 768px) {
+  .contact-page-hero-overlay {
+    padding-inline: 12px;
+  }
+
+  .contact-page-hero-overlay .container {
+    width: min(100%, 640px);
+    display: grid;
+    justify-items: center;
+    text-align: center;
+  }
+
   .contact-page-hero img {
     height: clamp(210px, 34vh, 280px);
     object-position: center 24%;
@@ -317,15 +328,20 @@
   .contact-page-hero h1 {
     font-size: clamp(2rem, 8vw, 2.4rem);
     margin-bottom: 8px;
+    max-width: 100%;
+    overflow-wrap: anywhere;
   }
 
   .contact-page-breadcrumb {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
+    width: 100%;
     font-size: 0.95rem;
     line-height: 1.4;
     gap: 8px;
+    max-width: 100%;
   }
 
   .contact-info-section {
@@ -372,6 +388,10 @@
 }
 
 @media (max-width: 480px) {
+  .contact-page-hero-overlay {
+    padding-inline: 10px;
+  }
+
   .contact-page-hero img {
     height: 190px;
   }
@@ -380,9 +400,14 @@
     font-size: clamp(1.75rem, 9vw, 2.1rem);
     line-height: 1.12;
     margin-bottom: 6px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .contact-page-breadcrumb {
+    width: 100%;
+    justify-content: center;
     font-size: 0.84rem;
     line-height: 1.35;
     gap: 6px;
