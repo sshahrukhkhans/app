@@ -1168,7 +1168,8 @@
   }
 
   .hero {
-    padding: 44px 0 150px;
+    min-height: auto;
+    padding: 40px 0 96px;
   }
 
   .hero-tag {
@@ -1177,6 +1178,12 @@
 
   .hero-copy {
     padding-top: 8px;
+    padding-bottom: 0;
+  }
+
+  .hero-content {
+    min-height: auto;
+    padding-top: 0;
   }
 
   .hero h1 {
@@ -1193,11 +1200,15 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: 10px;
+    gap: 8px;
   }
 
   .hero-buttons a {
-    width: min(100%, 240px);
+    width: min(100%, 208px);
+    min-width: 0;
+    padding: 11px 18px;
+    font-size: 14px;
+    border-radius: 10px;
   }
 
   .hero-blob-left {
@@ -1251,17 +1262,18 @@
   }
 
   .hero-person {
-    height: clamp(140px, 36vw, 180px);
-    max-width: clamp(92px, 24vw, 130px);
+    height: clamp(156px, 42vw, 198px);
+    max-width: clamp(104px, 28vw, 146px);
+    bottom: 8px;
     z-index: 3;
   }
 
   .hero-person-left {
-    left: -12px;
+    left: -14px;
   }
 
   .hero-person-right {
-    right: -12px;
+    right: -14px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
