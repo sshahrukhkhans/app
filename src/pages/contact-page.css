@@ -28,6 +28,10 @@
   color: #003b7f;
 }
 
+.contact-page-hero h1 .page-title-mobile-break {
+  display: inline;
+}
+
 .contact-page-breadcrumb {
   display: inline-flex;
   align-items: center;
@@ -399,6 +403,10 @@
     max-width: min(44vw, 180px);
     margin-left: 0;
     margin-right: 0;
+  }
+
+  .contact-page-hero h1 .page-title-mobile-break {
+    display: block;
   }
 
   .contact-page-breadcrumb {

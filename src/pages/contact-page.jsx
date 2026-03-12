@@ -41,7 +41,9 @@ const ContactPage = () => {
         <img src={serviceBanner} alt="Contact us banner" loading="lazy" />
         <div className="contact-page-hero-overlay">
           <div className="container">
-            <h1>Contact Us</h1>
+            <h1>
+              Contact <span className="page-title-mobile-break">Us</span>
+            </h1>
             <nav className="contact-page-breadcrumb" aria-label="Breadcrumb">
               <Link to="/">Home</Link>
               <span aria-hidden="true">&rsaquo;</span>

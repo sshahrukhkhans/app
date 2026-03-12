@@ -28,6 +28,10 @@
   color: #003b7f;
 }
 
+.about-page-hero h1 .page-title-mobile-break {
+  display: inline;
+}
+
 .about-page-breadcrumb {
   display: inline-flex;
   align-items: center;
@@ -679,6 +683,10 @@
     max-width: min(44vw, 180px);
     margin-left: 0;
     margin-right: 0;
+  }
+
+  .about-page-hero h1 .page-title-mobile-break {
+    display: block;
   }
 
   .about-page-breadcrumb {

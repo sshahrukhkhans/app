@@ -118,7 +118,9 @@ const AboutPage = () => {
         <img src={serviceBanner} alt="About us banner" loading="lazy" />
         <div className="about-page-hero-overlay">
           <div className="container">
-            <h1>About Us</h1>
+            <h1>
+              About <span className="page-title-mobile-break">Us</span>
+            </h1>
             <nav className="about-page-breadcrumb" aria-label="Breadcrumb">
               <Link to="/">Home</Link>
               <span aria-hidden="true">&rsaquo;</span>
