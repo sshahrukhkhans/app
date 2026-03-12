@@ -309,14 +309,23 @@
 }
 
 @media (max-width: 768px) {
+  .contact-page-hero img {
+    height: clamp(210px, 34vh, 280px);
+    object-position: center 24%;
+  }
+
   .contact-page-hero h1 {
     font-size: clamp(2rem, 8vw, 2.4rem);
     margin-bottom: 8px;
   }
 
   .contact-page-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     font-size: 0.95rem;
     line-height: 1.4;
+    gap: 8px;
   }
 
   .contact-info-section {
@@ -363,8 +372,20 @@
 }
 
 @media (max-width: 480px) {
+  .contact-page-hero img {
+    height: 190px;
+  }
+
+  .contact-page-hero h1 {
+    font-size: clamp(1.75rem, 9vw, 2.1rem);
+    line-height: 1.12;
+    margin-bottom: 6px;
+  }
+
   .contact-page-breadcrumb {
-    font-size: 0.86rem;
+    font-size: 0.84rem;
+    line-height: 1.35;
+    gap: 6px;
   }
 
   .contact-info-section {
