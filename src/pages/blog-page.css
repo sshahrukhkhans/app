@@ -220,10 +220,7 @@
 }
 
 @media (max-width: 768px) {
-  .blog-page-hero-overlay .container {
-    text-align: center;
-  }
-
+  
   .blog-page-list-section {
     padding: 48px 0 62px;
   }
@@ -243,8 +240,6 @@
   .blog-page-breadcrumb {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
     font-size: 0.95rem;
     line-height: 1.4;
     gap: 8px;

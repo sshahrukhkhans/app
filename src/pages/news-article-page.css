@@ -43,6 +43,7 @@
 
 .news-article-hero-copy {
   max-width: 900px;
+  text-align: left;
 }
 
 .news-article-hero h1 {
@@ -63,6 +64,7 @@
   font-weight: 500;
   line-height: 31.1112px;
   color: #003b7f;
+  justify-content: flex-start;
 }
 
 .news-article-breadcrumb a {
@@ -528,7 +530,7 @@
 @media (max-width: 768px) {
   .news-article-hero-overlay .container,
   .news-article-hero-copy {
-    text-align: center;
+    text-align: left;
   }
 
   .news-article-hero img {
@@ -552,7 +554,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     font-size: 0.95rem;
     line-height: 1.4;
     gap: 8px;
@@ -598,8 +600,8 @@
     font-size: clamp(1.75rem, 9vw, 2.05rem);
     line-height: 1.12;
     margin-bottom: 6px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .news-article-breadcrumb {

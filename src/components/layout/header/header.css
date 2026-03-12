@@ -1004,14 +1004,29 @@
   }
 
   .hero {
-    padding: 56px 0 30px;
+    padding: 56px 0 180px;
   }
 
   .hero::before,
   .hero::after,
-  .hero-person,
   .hero-arc {
     display: none;
+  }
+
+  .hero-person {
+    display: block;
+    height: clamp(170px, 28vw, 220px);
+    max-width: clamp(120px, 22vw, 170px);
+    bottom: 0;
+    z-index: 3;
+  }
+
+  .hero-person-left {
+    left: -18px;
+  }
+
+  .hero-person-right {
+    right: -18px;
   }
 
   .hero-copy {
@@ -1117,7 +1132,7 @@
   }
 
   .hero {
-    padding: 44px 0 20px;
+    padding: 44px 0 150px;
   }
 
   .hero-tag {
@@ -1151,6 +1166,20 @@
 
   .hero-blob-left {
     display: none;
+  }
+
+  .hero-person {
+    height: clamp(140px, 36vw, 180px);
+    max-width: clamp(92px, 24vw, 130px);
+    z-index: 3;
+  }
+
+  .hero-person-left {
+    left: -12px;
+  }
+
+  .hero-person-right {
+    right: -12px;
   }
 }
 @media (prefers-reduced-motion: reduce) {

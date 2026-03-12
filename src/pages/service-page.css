@@ -924,7 +924,7 @@
 
 @media (max-width: 768px) {
   .service-page-banner-content .container {
-    text-align: center;
+    /* text-align: center; */
   }
 
   .service-page-banner img {
@@ -942,8 +942,8 @@
   .service-page-breadcrumb {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center;
+    justify-content: center; */
     font-size: 0.92rem;
     gap: 8px;
     line-height: 1.35;
