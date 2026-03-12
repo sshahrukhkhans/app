@@ -301,6 +301,15 @@
     gap: 14px;
   }
 
+  .latest-news-viewport {
+    width: 100%;
+  }
+
+  .latest-news-grid {
+    gap: 0;
+    grid-auto-columns: 100%;
+  }
+
   .latest-news-arrow {
     justify-self: center;
     width: 52px;
@@ -338,6 +347,7 @@
 
   .latest-news-card {
     border-radius: 10px;
+    width: 100%;
   }
 
   .latest-news-image-wrap {
