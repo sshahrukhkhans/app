@@ -434,6 +434,10 @@
     font-size: 0.95rem;
     line-height: 1.6;
   }
+
+  .case-track {
+    --case-gap: 0px;
+  }
  
   .case-card {
     min-height: 230px;
@@ -469,6 +473,10 @@
   .case-wrap {
     border-radius: 18px;
     padding: 42px 14px 24px;
+  }
+
+  .case-viewport {
+    width: 100%;
   }
 
   .case-header h2 {
