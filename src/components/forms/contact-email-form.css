@@ -74,7 +74,13 @@
 
 @media (max-width: 640px) {
   .emailjs-phone-row {
-    grid-template-columns: 1fr;
-    gap: 10px;
+    grid-template-columns: 68px minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .emailjs-phone-country,
+  .emailjs-phone-row input {
+    padding: 14px 12px;
+    font-size: 15px;
   }
 }

@@ -193,17 +193,18 @@
 @media (max-width: 1180px) {
   .why-panel {
     grid-template-columns: 1fr;
+    gap: 18px;
     padding: 30px 24px 0;
   }
 
   .why-content {
     max-width: 100%;
-    padding: 8px 0 14px;
+    padding: 8px 0 0;
     margin-left: 0;
   }
 
   .why-media {
-    min-height: auto;
+    min-height: 0;
     justify-content: center;
   }
 
@@ -468,6 +469,10 @@
     padding: 66px 0 0;
   }
 
+  .why-panel {
+    gap: 14px;
+  }
+
   .why-kicker {
     font-family: "nunito sans", sans-serif;
     font-size: 13px;
@@ -523,7 +528,7 @@
   }
 
   .why-media {
-    min-height: 380px;
+    min-height: 0;
   }
 
   .why-team-banner {
@@ -563,6 +568,7 @@
   }
 
   .why-panel {
+    gap: 10px;
     padding: 24px 14px 0;
     border-radius: 18px;
   }
@@ -608,7 +614,7 @@
   }
 
   .why-media {
-    min-height: 280px;
+    min-height: 0;
   }
 
   .why-chart-banner,

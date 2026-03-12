@@ -313,9 +313,6 @@
 }
 
 @media (max-width: 768px) {
-  .contact-page-hero-overlay .container {
-    /* text-align: center; */
-  }
 
   .contact-page-hero img {
     height: clamp(210px, 34vh, 280px);
