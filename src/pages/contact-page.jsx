@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./contact-page.css";
 import Header from "../components/layout/header/header";
 import SiteFooterSection from "../components/layout/site-footer/site-footer";
+import ContactEmailForm from "../components/forms/contact-email-form";
 import serviceBanner from "../assets/images/banner.jpg";
 import project01 from "../assets/images/project-01.jpg";
 import project02 from "../assets/images/project-02.jpg";
@@ -77,14 +78,7 @@ const ContactPage = () => {
             <span className="contact-form-divider" aria-hidden="true" />
           </div>
 
-          <form className="contact-form-grid">
-            <input type="text" placeholder="Name*" />
-            <input type="text" placeholder="Phone No*" />
-            <input type="email" placeholder="E-mail*" />
-            <input type="text" placeholder="Subject*" />
-            <textarea placeholder="Message*" rows={6} />
-            <button type="button">Send Mail</button>
-          </form>
+          <ContactEmailForm className="contact-form-grid" sourcePage="Contact Page" />
         </div>
       </section>
 

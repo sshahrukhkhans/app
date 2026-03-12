@@ -26,9 +26,11 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="container nav-container">
-        <Link className="logo" to="/">
-          <img className="logo-mark" src={logoFooter} alt="CNR logo" />
-        </Link>
+        <div className="logo-slot">
+          <Link className="logo" to="/">
+            <img className="logo-mark" src={logoFooter} alt="CNR logo" />
+          </Link>
+        </div>
 
         <button
           className={`nav-toggle${isMenuOpen ? " is-open" : ""}`}

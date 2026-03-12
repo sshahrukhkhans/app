@@ -1,0 +1,80 @@
+.emailjs-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.emailjs-phone-row {
+  display: grid;
+  grid-template-columns: 82px minmax(0, 1fr);
+  gap: 12px;
+  min-width: 0;
+}
+
+.emailjs-phone-country {
+  width: 100%;
+  border: 1px solid #dce8f8;
+  border-radius: 12px;
+  background: #f3f7fd;
+  padding: 16px 18px;
+  font-family: "nunito sans", sans-serif;
+  font-size: 16px;
+  color: rgb(93, 102, 111);
+  outline: none;
+  appearance: none;
+  transition: border-color 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease;
+}
+
+.emailjs-phone-country:focus {
+  border-color: rgba(56, 201, 247, 0.76);
+  box-shadow: 0 0 0 4px rgba(56, 201, 247, 0.15);
+  background: #ffffff;
+}
+
+.emailjs-form-field-error {
+  margin: 0;
+  font-family: "nunito sans", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #c1435a;
+}
+
+.emailjs-form input[aria-invalid="true"] {
+  border-color: rgba(193, 67, 90, 0.72);
+  box-shadow: 0 0 0 4px rgba(193, 67, 90, 0.12);
+  background: #fffafa;
+}
+
+.emailjs-form-status {
+  grid-column: 1 / -1;
+  margin: 4px auto 0;
+  font-family: "nunito sans", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: center;
+  color: rgb(93, 102, 111);
+}
+
+.emailjs-form-status--success {
+  color: #177245;
+}
+
+.emailjs-form-status--error {
+  color: #c1435a;
+}
+
+.emailjs-form button:disabled {
+  cursor: wait;
+  opacity: 0.84;
+  transform: none;
+}
+
+@media (max-width: 640px) {
+  .emailjs-phone-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}

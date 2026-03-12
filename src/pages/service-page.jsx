@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import "./service-page.css";
 import Header from "../components/layout/header/header";
 import SiteFooterSection from "../components/layout/site-footer/site-footer";
+import ContactEmailForm from "../components/forms/contact-email-form";
 import serviceBanner from "../assets/images/banner.jpg";
 
 const serviceItems = [
@@ -536,14 +537,10 @@ const ServicePage = () => {
             <span className="service-drop-line-divider" aria-hidden="true" />
           </div>
 
-          <form className="service-drop-line-grid">
-            <input type="text" placeholder="Name*" />
-            <input type="text" placeholder="Phone No*" />
-            <input type="email" placeholder="E-mail*" />
-            <input type="text" placeholder="Subject*" />
-            <textarea placeholder="Message*" rows={6} />
-            <button type="button">Send Mail</button>
-          </form>
+          <ContactEmailForm
+            className="service-drop-line-grid"
+            sourcePage="Service Page"
+          />
         </div>
       </section>
 
